@@ -70,6 +70,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rescue_check_btn">
 
+            <ImageView
+                android:id="@+id/lock_title_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="35dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/lock_img"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/lock_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum_squareeb"
+                android:text="@string/lock_title_text"
+                app:layout_constraintEnd_toEndOf="@+id/lock_title_img"
+                app:layout_constraintStart_toStartOf="@+id/lock_title_img"
+                app:layout_constraintTop_toBottomOf="@+id/lock_title_img" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -84,6 +107,29 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/cctv_check_btn"
             app:layout_constraintTop_toBottomOf="@+id/my_place_set_btn">
+
+            <ImageView
+                android:id="@+id/warning_title_img"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/warning_img"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/warning_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum_squareeb"
+                android:text="@string/warning_title_text"
+                app:layout_constraintEnd_toEndOf="@+id/warning_title_img"
+                app:layout_constraintStart_toStartOf="@+id/warning_title_img"
+                app:layout_constraintTop_toBottomOf="@+id/warning_title_img" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

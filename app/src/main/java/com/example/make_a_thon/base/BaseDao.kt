@@ -1,4 +1,4 @@
-package com.example.flut_fluss_kotlin.base
+package com.example.make_a_thon.base
 
 import androidx.room.*
 

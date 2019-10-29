@@ -1,7 +1,7 @@
-package com.example.flut_fluss_kotlin.base
+package com.example.make_a_thon.base
 
-import com.example.flut_fluss_kotlin.network.response.Response
-import com.example.flut_fluss_kotlin.util.Utils
+import com.example.make_a_thon.network.response.Response
+import com.example.make_a_thon.util.Utils
 
 import io.reactivex.functions.Function
 

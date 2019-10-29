@@ -1,4 +1,4 @@
-package com.example.flut_fluss_kotlin.base.fragment
+package com.example.make_a_thon.base.fragment
 
 import android.content.Intent
 
@@ -20,7 +20,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 
-import com.example.flut_fluss_kotlin.base.viewmodel.BaseViewModel
+import com.example.make_a_thon.base.viewmodel.BaseViewModel
 
 abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel<*>> : Fragment() {
 

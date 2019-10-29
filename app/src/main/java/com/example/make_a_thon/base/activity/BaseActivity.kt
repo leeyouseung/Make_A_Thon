@@ -19,7 +19,7 @@ import androidx.fragment.app.Fragment
 
 import androidx.lifecycle.ViewModelProviders
 
-import com.example.flut_fluss_kotlin.base.viewmodel.BaseViewModel
+import com.example. make_a_thon.base.viewmodel.BaseViewModel
 
 abstract class BaseActivity<VB : ViewDataBinding, VM : BaseViewModel<*>> : AppCompatActivity() {
 

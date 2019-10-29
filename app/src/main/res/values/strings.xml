@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Make_A_Thon</string>
+    <string name="lock_title_text">조회하기</string>
+    <string name="warning_title_text">신고하기</string>
 </resources>
