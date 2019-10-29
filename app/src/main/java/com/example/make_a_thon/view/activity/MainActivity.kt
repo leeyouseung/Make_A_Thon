@@ -1,6 +1,9 @@
-package com.example.make_a_thon
+package com.example.make_a_thon.view.activity
 
 import android.os.Bundle
+
+import com.example.make_a_thon.BR
+import com.example.make_a_thon.R
 import com.example.make_a_thon.base.activity.BaseActivity
 import com.example.make_a_thon.databinding.ActivityMainBinding
 import com.example.make_a_thon.viewmodel.MainViewModel
