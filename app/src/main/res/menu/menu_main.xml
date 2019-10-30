@@ -5,26 +5,32 @@
 
         <item
             android:id="@+id/menu_my_profile"
+            android:icon="@drawable/user_icon"
             android:title="내 프로필 확인"/>
 
         <item
             android:id="@+id/menu_my_place"
+            android:icon="@drawable/maps_and_flags_img"
             android:title="내 위치 확인"/>
 
         <item
             android:id="@+id/menu_report"
+            android:icon="@drawable/emergency_call_icon"
             android:title="신고하기"/>
 
         <item
             android:id="@+id/menu_report_list"
+            android:icon="@drawable/clipboard_with_pencil_icon"
             android:title="신고내역"/>
 
         <item
             android:id="@+id/menu_camera"
+            android:icon="@drawable/search_icon"
             android:title="조회하기"/>
 
         <item
             android:id="@+id/menu_check_rescue"
+            android:icon="@drawable/checked_symbol_icon"
             android:title="구조대 현황 확인"/>
 
     </group>
