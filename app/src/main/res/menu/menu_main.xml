@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/menu_my_profile"
+            android:title="내 프로필 확인"/>
+
+        <item
+            android:id="@+id/menu_my_place"
+            android:title="내 위치 확인"/>
+
+        <item
+            android:id="@+id/menu_report"
+            android:title="신고하기"/>
+
+        <item
+            android:id="@+id/menu_report_list"
+            android:title="신고내역"/>
+
+        <item
+            android:id="@+id/menu_camera"
+            android:title="조회하기"/>
+
+        <item
+            android:id="@+id/menu_check_rescue"
+            android:title="구조대 현황 확인"/>
+
+    </group>
+</menu>

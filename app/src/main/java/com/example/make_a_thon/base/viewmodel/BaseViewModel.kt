@@ -8,7 +8,7 @@ import androidx.lifecycle.MutableLiveData
 //import com.example.flut_fluss_kotlin.model.repository.RoomRepository
 //import com.example.flut_fluss_kotlin.model.repository.TokenRepository
 //import com.example.flut_fluss_kotlin.model.repository.UserIdRepository
-import com.example.flut_fluss_kotlin.widget.SingleLiveEvent
+import com.example.make_a_thon.widget.SingleLiveEvent
 
 import io.reactivex.Single
 import io.reactivex.SingleObserver

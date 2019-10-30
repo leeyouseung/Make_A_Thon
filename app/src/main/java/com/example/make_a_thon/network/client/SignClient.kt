@@ -1,10 +1,10 @@
-package com.example.flut_fluss_kotlin.network.client
+package com.example.make_a_thon.network.client
 
-import com.example.flut_fluss_kotlin.base.BaseClient
-import com.example.flut_fluss_kotlin.model.entity.user.User
-import com.example.flut_fluss_kotlin.network.api.SignApi
-import com.example.flut_fluss_kotlin.network.request.LoginRequest
-import com.example.flut_fluss_kotlin.network.response.data.LoginData
+import com.example.make_a_thon.base.BaseClient
+import com.example.make_a_thon.model.entity.user.User
+import com.example.make_a_thon.network.api.SignApi
+import com.example.make_a_thon.network.request.LoginRequest
+import com.example.make_a_thon.network.response.data.LoginData
 
 import io.reactivex.Single
 

@@ -1,4 +1,4 @@
-package com.example.flut_fluss_kotlin.widget
+package com.example.make_a_thon.widget
 
 import android.util.Log
 

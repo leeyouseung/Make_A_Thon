@@ -10,6 +10,12 @@
             type="com.example.make_a_thon.viewmodel.MainViewModel" />
     </data>
 
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main"
+        tools:context=".view.activity.MainActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,6 +78,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/main_button_radius"
+            android:onClick="@{() -> viewmodel.onClickMyPlaceSetBtn()}"
             app:layout_constraintBottom_toTopOf="@+id/call_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -83,10 +90,12 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="35dp"
+                android:onClick="@{() -> viewmodel.onClickMyPlaceSetBtn()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/maps_and_flags_img" />
+                app:srcCompat="@drawable/maps_and_flags_img"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/my_place_set_title_text"
@@ -96,6 +105,7 @@
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nanum_squareeb"
+                android:onClick="@{() -> viewmodel.onClickMyPlaceSetBtn()}"
                 app:layout_constraintEnd_toEndOf="@+id/my_place_set_img"
                 app:layout_constraintStart_toStartOf="@+id/my_place_set_img"
                 app:layout_constraintTop_toBottomOf="@+id/my_place_set_img" />
@@ -178,6 +188,30 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <ImageView
+            android:id="@+id/menu_main_btn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/app_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/app_bar"
+            app:srcCompat="@drawable/menu_btn"
+            tools:ignore="ContentDescription" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@drawable/background_menu"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/menu_drawer"
+            app:menu="@menu/menu_main"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </layout>
