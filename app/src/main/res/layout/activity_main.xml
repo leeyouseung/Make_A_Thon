@@ -40,6 +40,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_bar">
 
+            <ImageView
+                android:id="@+id/sos_title_img"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="35dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/sos_warning_img"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/sos_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum_squareeb"
+                app:layout_constraintEnd_toEndOf="@+id/sos_title_img"
+                app:layout_constraintStart_toStartOf="@+id/sos_title_img"
+                app:layout_constraintTop_toBottomOf="@+id/sos_title_img" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,6 +77,28 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/rescue_check_btn"
             app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+            <ImageView
+                android:id="@+id/my_place_set_img"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="35dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/maps_and_flags_img" />
+
+            <TextView
+                android:id="@+id/my_place_set_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum_squareeb"
+                app:layout_constraintEnd_toEndOf="@+id/my_place_set_img"
+                app:layout_constraintStart_toStartOf="@+id/my_place_set_img"
+                app:layout_constraintTop_toBottomOf="@+id/my_place_set_img" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -74,7 +119,7 @@
                 android:id="@+id/lock_title_img"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -112,7 +157,7 @@
                 android:id="@+id/warning_title_img"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="35dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
