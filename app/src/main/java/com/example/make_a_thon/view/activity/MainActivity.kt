@@ -97,7 +97,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Navigat
             R.id.menu_check_rescue -> {
                 startActivity(RescueCheckActivity::class.java)
             }
-            else -> Toast.makeText(this, "문제가 발생하였습니다", Toast.LENGTH_SHORT).show()
+            else -> {
+                Toast.makeText(this, "문제가 발생하였습니다", Toast.LENGTH_SHORT).show()
+            }
         }
 
         overridePendingTransition(0, 0)
