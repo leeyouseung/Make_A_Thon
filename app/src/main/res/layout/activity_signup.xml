@@ -84,15 +84,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/pw_text"
-                    app:boxBackgroundColor="@android:color/white"
-                    app:passwordToggleEnabled="true">
+                    app:boxBackgroundColor="@android:color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/pw_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@={viewmodel.request.password}"
-                        android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                         android:inputType="textPassword"
                         android:privateImeOptions="nm" />
 
@@ -104,14 +102,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/pw_check_text"
-                    app:boxBackgroundColor="@android:color/white"
-                    app:passwordToggleEnabled="true">
+                    app:boxBackgroundColor="@android:color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/pw_check_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                         android:inputType="textPassword"
                         android:privateImeOptions="nm" />
 
@@ -123,16 +119,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/name_text"
-                    app:boxBackgroundColor="@android:color/white"
-                    app:passwordToggleEnabled="true">
+                    app:boxBackgroundColor="@android:color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/name_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@={viewmodel.request.name}"
-                        android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
-                        android:inputType="textPassword"
+                        android:inputType="text"
                         android:privateImeOptions="nm" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -143,15 +137,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/phone_number_text"
-                    app:boxBackgroundColor="@android:color/white"
-                    app:passwordToggleEnabled="true">
+                    app:boxBackgroundColor="@android:color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/phone_number_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@={viewmodel.request.phoneNumber}"
-                        android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                         android:inputType="textPassword"
                         android:privateImeOptions="nm" />
 
