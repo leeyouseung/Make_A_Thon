@@ -37,8 +37,20 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Navigat
     override fun initObserver() {
         with(viewModel) {
 
+            sosEvent.observe(this@MainActivity, Observer {
+                startActivity(RescueCheckActivity::class.java)
+            })
+
             myPlaceSetEvent.observe(this@MainActivity, Observer {
                 startActivity(MyPlaceActivity::class.java)
+            })
+
+            cctvCheckEvent.observe(this@MainActivity, Observer {
+                startActivity(CCTVActivity::class.java)
+            })
+
+            callEvent.observe(this@MainActivity, Observer {
+                startActivity(ReportActivity::class.java)
             })
         }
     }

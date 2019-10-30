@@ -10,4 +10,6 @@
     <string name="name_text">이름</string>
     <string name="phone_number_text">전화번호</string>
     <string name="sign_up_text">회원가입</string>
+    <string name="sos_title_text">구조대 현황 확인</string>
+    <string name="my_place_set_title_text">내 위치 확인</string>
 </resources>
