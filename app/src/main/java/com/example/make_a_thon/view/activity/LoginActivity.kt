@@ -1,6 +1,6 @@
 package com.example.make_a_thon.view.activity
 
-import android.os.Bundle
+import androidx.lifecycle.Observer
 
 import com.example.make_a_thon.BR
 import com.example.make_a_thon.R
@@ -25,11 +25,21 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
     override fun initObserver() {
         with(viewModel) {
 
+            signUpEvent.observe(this@LoginActivity, Observer {
+                startActivity(SignUpActivity::class.java)
+            })
+
+            loginEvent.observe(this@LoginActivity, Observer {
+                if(isEmpty()) {
+                    simpleToast("빈칸 없이 입력해주세요")
+                    return@Observer
+                }
+                login()
+            })
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    private fun isEmpty(): Boolean {
+        return viewModel.request.email == null || viewModel.request.password == null
     }
 }
