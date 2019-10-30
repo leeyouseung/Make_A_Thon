@@ -80,22 +80,22 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Navigat
 
         when (id) {
             R.id.menu_my_profile -> {
-                simpleToast("menuMyProfile")
+                startActivity(ProFileActivity::class.java)
             }
             R.id.menu_my_place -> {
-                simpleToast("menuMyPlace")
+                startActivity(MyPlaceActivity::class.java)
             }
             R.id.menu_report -> {
-                simpleToast("menuReport")
+                startActivity(ReportActivity::class.java)
             }
             R.id.menu_report_list -> {
                 simpleToast("menuReportList")
             }
-            R.id.menu_camera -> {
-                simpleToast("menuCamera")
+            R.id.menu_cctv -> {
+                startActivity(CCTVActivity::class.java)
             }
             R.id.menu_check_rescue -> {
-                simpleToast("menuCheckRescue")
+                startActivity(RescueCheckActivity::class.java)
             }
             else -> Toast.makeText(this, "문제가 발생하였습니다", Toast.LENGTH_SHORT).show()
         }

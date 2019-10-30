@@ -24,7 +24,7 @@
             android:title="신고내역"/>
 
         <item
-            android:id="@+id/menu_camera"
+            android:id="@+id/menu_cctv"
             android:icon="@drawable/search_icon"
             android:title="조회하기"/>
 
