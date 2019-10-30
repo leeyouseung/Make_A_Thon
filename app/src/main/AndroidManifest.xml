@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.RescueCheckActivity"></activity>
+        <activity android:name=".view.activity.ReportListActivity"></activity>
+        <activity android:name=".view.activity.CCTVActivity" />
+        <activity android:name=".view.activity.SignUpActivity" />
+        <activity android:name=".view.activity.LoginActivity" />
+        <activity android:name=".view.activity.ReportActivity" />
+        <activity android:name=".view.activity.ProFileActivity" />
+        <activity android:name=".view.activity.RescueCheckActivity" />
         <activity android:name=".view.activity.MyPlaceActivity" />
         <activity android:name=".view.animation.SplashActivity" />
         <activity android:name=".view.activity.MainActivity">
