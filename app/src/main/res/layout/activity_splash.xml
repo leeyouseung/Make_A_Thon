@@ -17,7 +17,7 @@
         tools:context=".view.animation.SplashActivity">
 
         <ImageView
-            android:id="@+id/animation_logo"
+            android:id="@+id/animation_logo_img"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginLeft="100dp"
