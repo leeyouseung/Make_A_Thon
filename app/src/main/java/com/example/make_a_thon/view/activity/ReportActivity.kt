@@ -1,8 +1,12 @@
 package com.example.make_a_thon.view.activity
 
+import android.content.Intent
+
 import android.os.Bundle
 
 import androidx.lifecycle.Observer
+
+import com.bumptech.glide.Glide
 
 import com.example.make_a_thon.BR
 import com.example.make_a_thon.R
@@ -31,11 +35,26 @@ class ReportActivity : BasePictureActivity<ActivityReportBinding, ReportViewMode
                 tedPermission()
                 goToAlbum()
             })
+
+            goToCropEvent.observe(this@ReportActivity, Observer {
+                goToCropPage(viewModel.tempPictureUri.value, viewModel.pictureUri.value)
+            })
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+    }
+
+    override fun pickNextEvent(data: Intent) {
+        super.pickNextEvent(data)
+
+        viewModel.savePickData(data)
+        viewModel.cropImage()
+    }
+
+    override fun cropNextEvent() {
+        Glide.with(this).load(viewModel.pictureUri.value).into(binding.inputImg)
     }
 }
