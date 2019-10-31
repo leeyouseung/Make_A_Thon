@@ -16,14 +16,12 @@
         android:background="@color/background_color"
         tools:context=".view.activity.ReportActivity">
 
-        <Button
-            android:id="@+id/album_btn"
+        <ImageView
+            android:id="@+id/input_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="12dp"
-            android:text="사진첨부"
+            android:src="@drawable/photo_img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +45,7 @@
             app:layout_constraintEnd_toStartOf="@+id/report_btn_3"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/report_btn_1"
-            app:layout_constraintTop_toBottomOf="@+id/album_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/input_img" />
 
         <Button
             android:id="@+id/report_btn_3"
