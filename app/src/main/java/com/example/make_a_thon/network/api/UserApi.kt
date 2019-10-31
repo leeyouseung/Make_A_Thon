@@ -11,6 +11,6 @@ import retrofit2.http.Path
 
 interface UserApi {
 
-    @GET()
-    fun getProfile(@Header("") token : String, @Path("") userId : String): Single<retrofit2.Response<Response<Profile>>>
+    @GET("/getProfile")
+    fun getProfile(@Header("Authorization") token : String, @Path("userId") userId : String): Single<retrofit2.Response<Response<Profile>>>
 }

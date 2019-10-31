@@ -14,7 +14,7 @@ class ProFileViewModel(application: Application) : BaseViewModel<Profile>(applic
 
     private val userClient = UserClient()
 
-    var id: MutableLiveData<String> = MutableLiveData()
+    var id = MutableLiveData<String>()
 
     val myPlaceSetEvent = SingleLiveEvent<Unit>()
     val reportListEvent = SingleLiveEvent<Unit>()
