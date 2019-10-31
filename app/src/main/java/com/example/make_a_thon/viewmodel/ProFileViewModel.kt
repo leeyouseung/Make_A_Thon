@@ -5,10 +5,11 @@ import android.app.Application
 import androidx.lifecycle.MutableLiveData
 
 import com.example.make_a_thon.base.viewmodel.BaseViewModel
+import com.example.make_a_thon.model.user.Profile
 import com.example.make_a_thon.network.client.UserClient
 import com.example.make_a_thon.widget.SingleLiveEvent
 
-class ProFileViewModel(application: Application) : BaseViewModel<ProFileViewModel>(application) {
+class ProFileViewModel(application: Application) : BaseViewModel<Profile>(application) {
 
     private val userClient = UserClient()
 
@@ -35,7 +36,9 @@ class ProFileViewModel(application: Application) : BaseViewModel<ProFileViewMode
         addDisposableLoading(userClient.getProfile(token, id.value!!), dataObserver)
     }
 
-    override fun onRetrieveDataSuccess(data: ProFileViewModel) {}
+    override fun onRetrieveDataSuccess(data: Profile) {
+        
+    }
 
     override fun onRetrieveBaseSuccess(message: String) {}
 }
