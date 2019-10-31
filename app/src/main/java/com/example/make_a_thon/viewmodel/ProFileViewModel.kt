@@ -37,7 +37,7 @@ class ProFileViewModel(application: Application) : BaseViewModel<Profile>(applic
     }
 
     override fun onRetrieveDataSuccess(data: Profile) {
-        
+
     }
 
     override fun onRetrieveBaseSuccess(message: String) {}
