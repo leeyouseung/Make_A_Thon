@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 
 //import com.example.flut_fluss_kotlin.model.repository.RoomRepository
-//import com.example.flut_fluss_kotlin.model.repository.TokenRepository
+import com.example.make_a_thon.database.repository.TokenRepository
 //import com.example.flut_fluss_kotlin.model.repository.UserIdRepository
 import com.example.make_a_thon.widget.SingleLiveEvent
 
@@ -21,17 +21,17 @@ import io.reactivex.schedulers.Schedulers
 abstract class BaseViewModel<D> protected constructor(application: Application) : AndroidViewModel(application) {
 
     private val disposable: CompositeDisposable = CompositeDisposable()
-//    private val tokenManager: TokenRepository = TokenRepository(application)
+    private val tokenManager: TokenRepository = TokenRepository(application)
 //    private val userIdManager: UserIdRepository = UserIdRepository(application)
 //    protected val repository: RoomRepository = RoomRepository(application)
 
     val onErrorEvent: SingleLiveEvent<Throwable> = SingleLiveEvent()
     var isLoading: MutableLiveData<Boolean> = MutableLiveData()
 
-//    var token: String
-//        get() = tokenManager.token.token
-//        set(value) = tokenManager.setToken(value)
-//
+    var token: String
+        get() = tokenManager.token.token
+        set(value) = tokenManager.setToken(value)
+
 //    var userId: String
 //        get() = userIdManager.userId.id
 //        set(value) = userIdManager.setUserId(value)

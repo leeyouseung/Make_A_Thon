@@ -1,7 +1,5 @@
 package com.example.make_a_thon.view.activity
 
-import android.content.Intent
-
 import android.os.Bundle
 
 import android.view.MenuItem
@@ -76,9 +74,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Navigat
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-        val intent: Intent
 
-        when (id) {
+        when(id) {
             R.id.menu_my_profile -> {
                 startActivity(ProFileActivity::class.java)
             }
@@ -89,7 +86,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Navigat
                 startActivity(ReportActivity::class.java)
             }
             R.id.menu_report_list -> {
-                simpleToast("menuReportList")
+                startActivity(ReportListActivity::class.java)
             }
             R.id.menu_cctv -> {
                 startActivity(CCTVActivity::class.java)

@@ -1,4 +1,4 @@
-package com.example.make_a_thon.model.entity.user
+package com.example.make_a_thon.model.user
 
 class FbUser {
     var name: String? = null

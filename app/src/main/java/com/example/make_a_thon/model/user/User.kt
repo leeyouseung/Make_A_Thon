@@ -1,4 +1,4 @@
-package com.example.make_a_thon.model.entity.user
+package com.example.make_a_thon.model.user
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

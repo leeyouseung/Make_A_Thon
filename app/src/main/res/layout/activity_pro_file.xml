@@ -15,6 +15,117 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.ProFileActivity">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="225dp">
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="@color/colorPrimaryDark"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:civ_border_color="@android:color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:mutableImageUrl="@drawable/user_icon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanum_squareeb"
+                        android:text="이름"
+                        android:textColor="@android:color/black"
+                        android:textSize="11pt" />
+
+                    <TextView
+                        android:id="@+id/place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="8dp"
+                        android:textSize="8pt"
+                        android:fontFamily="@font/nanum_squareeb"
+                        android:text="위치" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/main_button_radius"
+                        android:gravity="center"
+                        android:text="위치 확인"
+                        android:onClick="@{() -> viewmodel.onClickMyPlaceSetBtn()}"
+                        android:fontFamily="@font/nanum_squareeb"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="7pt" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginStart="40dp"
+                        android:background="@drawable/login_button_radius"
+                        android:textSize="7pt"
+                        android:textColor="@color/white"
+                        android:text="신고내역"
+                        android:onClick="@{() -> viewmodel.onClickReportListBtn()}"
+                        android:fontFamily="@font/nanum_squareeb"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

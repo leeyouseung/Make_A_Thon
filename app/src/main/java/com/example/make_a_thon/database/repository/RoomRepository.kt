@@ -1,10 +1,10 @@
-package com.example.make_a_thon.model.repository
+package com.example.make_a_thon.database.repository
 
 import android.app.Application
 
-import com.example.make_a_thon.model.dao.UserDao
-import com.example.make_a_thon.model.database.RoomDatabase
-import com.example.make_a_thon.model.entity.user.User
+import com.example.make_a_thon.database.dao.UserDao
+import com.example.make_a_thon.database.database.RoomDatabase
+import com.example.make_a_thon.model.user.User
 
 import io.reactivex.Completable
 import io.reactivex.Single

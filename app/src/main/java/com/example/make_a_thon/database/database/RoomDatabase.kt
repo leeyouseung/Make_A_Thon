@@ -1,12 +1,12 @@
-package com.example.make_a_thon.model.database
+package com.example.make_a_thon.database.database
 
 import android.content.Context
 
 import androidx.room.Database
 import androidx.room.Room
 
-import com.example.make_a_thon.model.dao.UserDao
-import com.example.make_a_thon.model.entity.user.User
+import com.example.make_a_thon.database.dao.UserDao
+import com.example.make_a_thon.model.user.User
 
 @Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class RoomDatabase : androidx.room.RoomDatabase() {

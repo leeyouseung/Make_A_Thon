@@ -1,25 +1,30 @@
-package com.example.make_a_thon.model.sharedpreference
+package com.example.make_a_thon.database.sharedpreference
+
+import android.annotation.SuppressLint
 
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
+
 import com.f2prateek.rx.preferences2.Preference
 import com.f2prateek.rx.preferences2.RxSharedPreferences
 
-class UserId(context: Context) : ContextWrapper(context) {
-    var id: String = ""
+class Token(context: Context) : ContextWrapper(context) {
+    var token: String = ""
+        @SuppressLint("CheckResult")
         get() {
             val sharedPreferences: SharedPreferences = getSharedPreferences("fluss", Context.MODE_PRIVATE)
             val rxPreferences = RxSharedPreferences.create(sharedPreferences)
-            val tokenObservable: Preference<String> = rxPreferences.getString("id")
-            tokenObservable.asObservable().subscribe { id: String -> field = id }
+            val tokenObservable: Preference<String> = rxPreferences.getString("token")
+            tokenObservable.asObservable().subscribe { token: String -> field = token }
             return field
         }
-        set(id) {
+        @SuppressLint("ApplySharedPref")
+        set(token) {
             val sharedPreferences: SharedPreferences = getSharedPreferences("fluss", Context.MODE_PRIVATE)
             val editor: Editor = sharedPreferences.edit()
-            editor.putString("id", id)
+            editor.putString("token", token)
             editor.commit()
         }
 

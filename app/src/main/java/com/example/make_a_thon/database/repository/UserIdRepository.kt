@@ -1,8 +1,8 @@
-package com.example.make_a_thon.model.repository
+package com.example.make_a_thon.database.repository
 
 import android.content.Context
 
-import com.example.make_a_thon.model.sharedpreference.UserId
+import com.example.make_a_thon.database.sharedpreference.UserId
 
 class UserIdRepository(private val context: Context) {
     val userId: UserId = UserId(context)
