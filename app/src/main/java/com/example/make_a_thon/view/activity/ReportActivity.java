@@ -83,6 +83,7 @@ public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
                 public void onResponse(Call<ReportRequest> call, Response<ReportRequest> response) {
                     Toast.makeText(getApplicationContext(), "신고가 접수 되었습니다", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
                 }
 
                 @Override
