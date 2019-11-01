@@ -42,6 +42,6 @@ class CCTVActivity : BaseActivity<ActivityCctvBinding, CCTVViewModel>() {
                 return true
             }
         }
-        webView.loadUrl("https://www.google.co.in/")
+        webView.loadUrl("")
     }
 }
