@@ -38,6 +38,7 @@ class MyPlaceActivity : BaseActivity<ActivityMyPlaceBinding, MyPlaceViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val fragmentManager = fragmentManager
         val mapFragment = fragmentManager.findFragmentById(R.id.map) as MapFragment
         mapFragment.getMapAsync(this)
     }
