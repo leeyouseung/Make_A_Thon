@@ -34,6 +34,11 @@ class LoginViewModel(application: Application) : BaseViewModel<LoginData>(applic
     override fun onRetrieveDataSuccess(data: LoginData) {}
 
     override fun onRetrieveBaseSuccess(message: String) {
-        openMain.call()
+        if(message == "success") {
+            openMain.call()
+        }
+        else {
+            return
+        }
     }
 }
