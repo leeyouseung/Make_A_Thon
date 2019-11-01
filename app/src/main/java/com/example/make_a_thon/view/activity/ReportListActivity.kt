@@ -36,14 +36,9 @@ class ReportListActivity : BaseActivity<ActivityReportListBinding, ReportListVie
 
     override fun initObserver() {
         with(viewModel) {
-
-
-
+            
             with(reportAdapter) {
 
-                intentItem.observe(this@ReportListActivity, Observer {
-                    startActivity(ShowReportContent::class.java)
-                })
             }
         }
     }
