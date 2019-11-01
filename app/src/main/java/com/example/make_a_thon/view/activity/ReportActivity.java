@@ -1,54 +1,48 @@
 package com.example.make_a_thon.view.activity;
 
 import android.Manifest;
-import android.app.Activity;
+
 import android.content.Intent;
+
 import android.database.Cursor;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
+
 import android.net.Uri;
+
 import android.os.Bundle;
-import android.os.Environment;
+
 import android.provider.MediaStore;
+
 import android.util.Log;
+
 import android.widget.Toast;
 
-import androidx.lifecycle.ViewModelProviders;
-
-import com.bumptech.glide.Glide;
 import com.example.make_a_thon.R;
 import com.example.make_a_thon.base_java.BaseActivityJava;
 import com.example.make_a_thon.database.sharedpreference.Token;
 import com.example.make_a_thon.databinding.ActivityReportBinding;
-import com.example.make_a_thon.manager.ViewModelFactory;
-import com.example.make_a_thon.network.api.ReportApi;
 import com.example.make_a_thon.network.api.ReportApiJava;
-import com.example.make_a_thon.network.request.ImgUploadRequest;
 import com.example.make_a_thon.network.request.ReportRequest;
-import com.example.make_a_thon.util.Utils;
-//import com.example.make_a_thon.viewmodel.ImgUploadViewModel;
-//import com.example.make_a_thon.viewmodel.ReportViewModel;
+import com.example.make_a_thon.util.UtilsJava;
+
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
 import java.io.File;
-import java.io.IOException;
+
 import java.util.ArrayList;
-import java.util.Random;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
-
-//    private ReportViewModel reportViewModel;
-//    private ImgUploadViewModel imgUploadViewModel;
 
     File tempFile;
     File file;
@@ -58,10 +52,11 @@ public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
 
     private Uri photoURI;
 
-    ReportApiJava reportApiJava = Utils.RETROFIT.create(ReportApiJava.class);
+    ReportApiJava reportApiJava = UtilsJava.RETROFIT.create(ReportApiJava.class);
 
     @Override
     protected int layoutId() {
+
         return R.layout.activity_report;
     }
 
