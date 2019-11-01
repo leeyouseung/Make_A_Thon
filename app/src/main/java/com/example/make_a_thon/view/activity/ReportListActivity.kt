@@ -36,7 +36,7 @@ class ReportListActivity : BaseActivity<ActivityReportListBinding, ReportListVie
 
     override fun initObserver() {
         with(viewModel) {
-            
+
             with(reportAdapter) {
 
             }
