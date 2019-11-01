@@ -8,6 +8,8 @@ import android.widget.Toast
 
 import androidx.core.view.GravityCompat
 
+import androidx.lifecycle.Observer
+
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -35,6 +37,14 @@ class ReportListActivity : BaseActivity<ActivityReportListBinding, ReportListVie
     override fun initObserver() {
         with(viewModel) {
 
+
+
+            with(reportAdapter) {
+
+                intentItem.observe(this@ReportListActivity, Observer {
+                    startActivity(ShowReportContent::class.java)
+                })
+            }
         }
     }
 
@@ -45,13 +55,9 @@ class ReportListActivity : BaseActivity<ActivityReportListBinding, ReportListVie
 
         binding.reportListRecyclerview.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
 
-        clickEvent()
-    }
-
-    override fun onResume() {
-        super.onResume()
-
         viewModel.getReportList()
+
+        clickEvent()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

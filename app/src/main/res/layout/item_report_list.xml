@@ -13,7 +13,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:background="@color/bright_gray"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="100dp"
+    android:onClick="@{() -> viewmodel.onClickItem()}">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -42,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:fontFamily="@font/nanum_squarel"
-            android:text="19-01-12 12:12 출동완료"
+            android:text="@{viewmodel.time}"
             android:textColor="@color/black"
             android:textSize="7pt"
             android:maxLines="1"
@@ -58,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="대구 광역시 달성군 구지면 창리로 11길 93"
+        android:text="@{viewmodel.content}"
         android:fontFamily="@font/nanum_squarer"
         android:textSize="7pt"
         android:textColor="@color/gray"

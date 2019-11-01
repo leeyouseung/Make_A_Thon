@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/main"
-        tools:context=".view.activity.MainActivity">
+        tools:context=".view.activity.ReportListActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,8 +32,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/app_bar_img"
                 tools:ignore="ContentDescription" />
-
-
 
             <ImageView
                 android:id="@+id/menu_main_btn"
@@ -87,6 +85,7 @@
                 android:layout_height="0dp"
                 android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:adapter="@{viewmodel.reportAdapter}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

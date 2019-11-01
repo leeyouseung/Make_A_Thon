@@ -9,10 +9,13 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 
 import com.example.make_a_thon.R
 import com.example.make_a_thon.model.report.ReportList
+import com.example.make_a_thon.widget.SingleLiveEvent
 import com.example.make_a_thon.widget.recyclerview.holder.ReportViewHolder
 import com.example.make_a_thon.widget.recyclerview.navigator.ReportAdapterNavigator
 
 class ReportAdapter : Adapter<ReportViewHolder>(), ReportAdapterNavigator {
+
+    val intentItem = SingleLiveEvent<Unit>()
 
     private lateinit var reportLists: List<ReportList>
 
@@ -25,11 +28,14 @@ class ReportAdapter : Adapter<ReportViewHolder>(), ReportAdapterNavigator {
         holder.bind(reportLists[position])
     }
 
+    override fun intentItem() {
+        intentItem.call()
+    }
+
     fun updateList(reportLists: List<ReportList>?) {
         this.reportLists = reportLists!!
         notifyDataSetChanged()
     }
-
 
     override fun getItemCount(): Int {
         return if(::reportLists.isInitialized) reportLists.size else 0

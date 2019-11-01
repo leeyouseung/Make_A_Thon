@@ -8,8 +8,8 @@ import io.reactivex.Single
 
 class UserClient : BaseClient<UserApi>() {
 
-    fun getProfile(token: String, userId: String): Single<Profile> {
-        return api.getProfile(token, userId).map(getResponseObjectsFunction())
+    fun getProfile(token: String): Single<Profile> {
+        return api.getProfile(token).map(getResponseObjectsFunction())
     }
 
     override fun type(): Class<UserApi> {

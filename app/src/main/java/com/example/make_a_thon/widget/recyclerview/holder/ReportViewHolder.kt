@@ -10,7 +10,12 @@ import com.example.make_a_thon.widget.recyclerview.viewmodel.ReportItemViewModel
 class ReportViewHolder(val binding: ItemReportListBinding) : BaseViewHolder<ReportAdapterNavigator>(binding.root), ReportItemNavigator {
 
     private val viewModel = ReportItemViewModel()
+
     private lateinit var reportList: ReportList
+
+    override fun clickItemEvent() {
+        getNavigator().intentItem()
+    }
 
     fun bind(data: ReportList) {
         viewModel.bind(data)

@@ -64,7 +64,6 @@ class ProFileActivity : BaseActivity<ActivityProFileBinding, ProFileViewModel>()
     }
 
     private fun setUp() {
-        viewModel.id.value = intent.getStringExtra("id")
         viewModel.setUp()
 
         binding.swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary, R.color.colorAccent)
