@@ -1,25 +1,22 @@
-package org.techtown.betweenus_android.viewmodel;
+package com.example.make_a_thon.viewmodel;
 
 import android.content.Context;
 import android.net.Uri;
 
 import androidx.lifecycle.MutableLiveData;
 
-import org.techtown.betweenus_android.base.BaseViewModel;
-import org.techtown.betweenus_android.manager.Token;
-import org.techtown.betweenus_android.model.Image;
-import org.techtown.betweenus_android.network.client.ImgUploadClient;
-import org.techtown.betweenus_android.network.request.ImgUploadRequest;
+import com.example.make_a_thon.base_java.BaseViewModelJava;
+import com.example.make_a_thon.network.client.ImgUploadClient;
+import com.example.make_a_thon.network.request.ImgUploadRequest;
 
 import java.io.File;
-import java.util.List;
 
-public class ImgUploadViewModel extends BaseViewModel<List<String>> {
+public class ImgUploadViewModel extends BaseViewModelJava<String> {
 
     public MutableLiveData<Uri> uri = new MutableLiveData<>();
     public MutableLiveData<File> file = new MutableLiveData<>();
 
-    public MutableLiveData<List<String>> images = new MutableLiveData<>();
+    public MutableLiveData<String> image = new MutableLiveData<>();
 
     private ImgUploadClient imgUploadClient;
 
@@ -29,11 +26,7 @@ public class ImgUploadViewModel extends BaseViewModel<List<String>> {
         imgUploadClient = new ImgUploadClient();
     }
 
-    public void profileImgUpload(ImgUploadRequest imgUploadRequest) {
-        addDisposable(imgUploadClient.profileImgUpload(imgUploadRequest), getDataObserver());
-    }
-
-    public void studyImgUpload(ImgUploadRequest imgUploadRequest) {
-        addDisposable(imgUploadClient.studyImgUpload(imgUploadRequest), getDataObserver());
+    public void reportImgUpload(ImgUploadRequest imgUploadRequest) {
+        addDisposable(imgUploadClient.reportImgUpload(imgUploadRequest), getDataObserver());
     }
 }

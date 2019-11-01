@@ -1,4 +1,4 @@
-package org.techtown.betweenus_android.network.request;
+package com.example.make_a_thon.network.request;
 
 import java.io.Serializable;
 

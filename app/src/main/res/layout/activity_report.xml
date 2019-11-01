@@ -10,95 +10,137 @@
             type="com.example.make_a_thon.viewmodel.ReportViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color"
+        android:id="@+id/main"
         tools:context=".view.activity.ReportActivity">
 
-        <ImageView
-            android:id="@+id/input_img"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="12dp"
-            android:src="@{viewmodel.pictureUri}"
-            android:onClick="@{() -> viewmodel.onClickInputImgBtn()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
+            android:layout_height="match_parent"
+            android:background="@color/background_color"
+            tools:context=".view.activity.ReportActivity">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/loginLayoutCardView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
-            android:elevation="15dp"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/report_btn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_img">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/app_bar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white">
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/app_bar_img"
+                tools:ignore="ContentDescription" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_id"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <ImageView
+                android:id="@+id/input_img"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/user_icon"
+                android:onClick="@{() -> viewmodel.goToAlbum()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/app_bar"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/loginLayoutCardView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:elevation="15dp"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/report_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_img">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="상황설명..."
-                    app:boxCornerRadiusBottomStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    app:boxCornerRadiusTopEnd="15dp"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxBackgroundColor="@android:color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText">
+                    android:background="@color/white">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/id_text"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_layout_id"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:imeOptions="flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
-                        android:inputType="textEmailAddress"
-                        android:privateImeOptions="nm"
-                        android:text="@={viewmodel.request.content}" />
+                        android:hint="상황설명..."
+                        app:boxCornerRadiusBottomStart="15dp"
+                        app:boxCornerRadiusBottomEnd="15dp"
+                        app:boxCornerRadiusTopEnd="15dp"
+                        app:boxCornerRadiusTopStart="15dp"
+                        app:boxBackgroundColor="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/content_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeOptions="flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
+                            android:inputType="textEmailAddress"
+                            android:privateImeOptions="nm"
+                            android:text="@={viewmodel.contentText}"/>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/report_btn"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/login_button_radius"
-            android:fontFamily="@font/nanum_squareeb"
-            android:gravity="center"
-            android:text="신고하기"
-            android:textColor="@color/white"
-            android:textSize="7pt"
-            android:onClick="@{() -> viewmodel.signUp()}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/loginLayoutCardView"
-            app:layout_constraintStart_toStartOf="@+id/loginLayoutCardView"
-            tools:ignore="HardcodedText" />
+            </com.google.android.material.card.MaterialCardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/report_btn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/login_button_radius"
+                android:fontFamily="@font/nanum_squareeb"
+                android:gravity="center"
+                android:text="신고하기"
+                android:textColor="@color/white"
+                android:textSize="7pt"
+                android:onClick="@{() -> viewmodel.report()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/loginLayoutCardView"
+                app:layout_constraintStart_toStartOf="@+id/loginLayoutCardView"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/menu_main_btn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/app_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/app_bar"
+                app:srcCompat="@drawable/menu_btn"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@drawable/background_menu"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/menu_drawer"
+            app:menu="@menu/menu_main"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </layout>

@@ -1,9 +1,9 @@
 package com.example.make_a_thon.view.activity
 
 import android.content.Intent
+import android.os.Bundle
 
 import androidx.lifecycle.Observer
-
 import com.bumptech.glide.Glide
 
 import com.example.make_a_thon.BR
@@ -29,43 +29,38 @@ class ReportActivity : BasePictureActivity<ActivityReportBinding, ReportViewMode
     override fun initObserver() {
         with(viewModel) {
 
-            onSuccessEvent.observe(this@ReportActivity, Observer {
-                simpleToast(it)
-            })
-
-            nullPointEvent.observe(this@ReportActivity, Observer {
-                simpleToast("신고 사진을 등록해주세요")
-            })
-
-            goToAlbumEvent.observe(this@ReportActivity, Observer {
-                tedPermission()
-                goToAlbum()
-            })
-
-            goToCropEvent.observe(this@ReportActivity, Observer {
+            goToCrop.observe(this@ReportActivity, Observer {
                 goToCropPage(viewModel.tempPictureUri.value, viewModel.pictureUri.value)
             })
 
-            openMain.observe(this@ReportActivity, Observer {
-                if(it == "success") {
-                    startActivityWithFinish(MainActivity::class.java)
-                }
-                else {
-                    simpleToast("실패")
-                    return@Observer
-                }
+            goToAlbumEvent.observe(this@ReportActivity, Observer {
+                goToAlbum()
             })
         }
     }
 
-    override fun pickNextEvent(data: Intent) {
-        super.pickNextEvent(data)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+        setUp()
+    }
+
+    private fun setUp() {
+        tedPermission()
+    }
+
+    override fun pickNextEvent(data: Intent) {
         viewModel.savePickData(data)
         viewModel.cropImage()
     }
 
     override fun cropNextEvent() {
+        super.cropNextEvent()
         Glide.with(this).load(viewModel.pictureUri.value).into(binding.inputImg)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivityWithFinish(MainActivity::class.java)
     }
 }

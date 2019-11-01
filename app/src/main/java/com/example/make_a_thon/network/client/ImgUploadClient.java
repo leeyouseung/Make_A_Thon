@@ -1,30 +1,22 @@
-package org.techtown.betweenus_android.network.client;
+package com.example.make_a_thon.network.client;
 
-import android.net.Uri;
-
-import org.techtown.betweenus_android.base.BaseClient;
-import org.techtown.betweenus_android.manager.Token;
-import org.techtown.betweenus_android.model.Image;
-import org.techtown.betweenus_android.network.api.ImgUploadApi;
-import org.techtown.betweenus_android.network.request.ImgUploadRequest;
-
-import java.util.List;
+import com.example.make_a_thon.base_java.BaseClientJava;
+import com.example.make_a_thon.model.report.Image;
+import com.example.make_a_thon.network.api.ImgUploadApi;
+import com.example.make_a_thon.network.request.ImgUploadRequest;
 
 import io.reactivex.Single;
 
-public class ImgUploadClient extends BaseClient<ImgUploadApi> {
+public class ImgUploadClient extends BaseClientJava<ImgUploadApi> {
 
     @Override
     protected Class api() {
+
         return ImgUploadApi.class;
     }
 
-    public Single<Image> profileImgUpload(ImgUploadRequest imgUploadRequest) {
+    public Single<Image> reportImgUpload(ImgUploadRequest imgUploadRequest) {
 
-        return api.profileImgUpload(imgUploadRequest.getFile()).map(getResponseObjectsFunction());
-    }
-
-    public Single<List<String>> studyImgUpload(ImgUploadRequest imgUploadRequest) {
-        return api.studyImgUpload(imgUploadRequest.getFile()).map(getResponseObjectsFunction());
+        return api.reportImgUpload(imgUploadRequest.getFile()).map(getResponseObjectsFunction());
     }
 }

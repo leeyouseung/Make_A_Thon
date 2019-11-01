@@ -1,61 +1,46 @@
 package com.example.make_a_thon.viewmodel
 
 import android.app.Application
-
 import android.content.Intent
-
 import android.net.Uri
-
 import android.os.Environment
-
 import androidx.lifecycle.MutableLiveData
 
 import com.example.make_a_thon.base.viewmodel.BaseViewModel
 import com.example.make_a_thon.network.client.ReportClient
-import com.example.make_a_thon.network.request.ReportRequest
 import com.example.make_a_thon.widget.SingleLiveEvent
-
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-
 import java.io.File
 import java.io.IOException
-
 import java.lang.NullPointerException
-
 import java.util.*
 
-class ReportViewModel(application: Application) : BaseViewModel<Any>(application) {
+class ReportViewModel(application: Application) : BaseViewModel<ReportViewModel>(application) {
 
-    private val reportClient = ReportClient()
+    val reportClient = ReportClient()
 
-    val request = ReportRequest()
+    val tempPictureUri: MutableLiveData<Uri> = MutableLiveData()
+    val pictureUri: MutableLiveData<Uri> = MutableLiveData()
+    private val pictureFile: MutableLiveData<File> = MutableLiveData()
+    private val picture: MutableLiveData<MultipartBody.Part> = MutableLiveData()
 
-    val onSuccessEvent = SingleLiveEvent<String>()
-    val nullPointEvent = SingleLiveEvent<Unit>()
     val goToAlbumEvent = SingleLiveEvent<Unit>()
-    val goToCropEvent = SingleLiveEvent<Unit>()
 
-    val tempPictureUri = MutableLiveData<Uri>()
-    val pictureUri = MutableLiveData<Uri>()
-    private val pictureFile = MutableLiveData<File>()
-    private val image = MutableLiveData<MultipartBody.Part>()
-    private val id = MutableLiveData<RequestBody>()
+    val contentText = MutableLiveData<String>()
     private val content = MutableLiveData<RequestBody>()
 
-    val openMain = SingleLiveEvent<String>()
+    val nullPointerException = SingleLiveEvent<Unit>()
+    val goToCrop: SingleLiveEvent<Unit> = SingleLiveEvent()
 
-    fun signUp() {
-        if(!setRequest()) {
-            return
-        }
-        else {
-            addDisposable(reportClient.report(token, image.value!!, content.value!!), baseObserver)
-        }
+
+    fun report() {
+        if (!setRequest()) return
+        addDisposable(reportClient.report(token, picture.value!!, content.value!!), baseObserver)
     }
 
-    fun onClickInputImgBtn() {
+    fun goToAlbum() {
         goToAlbumEvent.call()
     }
 
@@ -65,18 +50,16 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
 
     fun cropImage() {
         createFile()
-        goToCropEvent.call()
+        goToCrop.call()
     }
 
     private fun createFile() {
-        val file = File(Environment.getExternalStorageDirectory().toString() + "/MakeAThon/Profile")
+        val file = File(Environment.getExternalStorageDirectory().toString() + "/Make")
         if (!file.exists()) file.mkdirs()
-        pictureFile.value = File(Environment.getExternalStorageDirectory().toString() + "/MakeAThon/Profile"
-                + Random().nextInt(999999999).toString() + ".jpg")
+        pictureFile.value = File(Environment.getExternalStorageDirectory().toString() + "/Make/" + Random().nextInt(999999999).toString() + ".jpg")
         try {
             pictureFile.value!!.createNewFile()
-        }
-        catch (e: IOException) {
+        } catch (e: IOException) {
             e.printStackTrace()
         }
         pictureUri.value = Uri.fromFile(pictureFile.value)
@@ -85,20 +68,13 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     private fun setRequest(): Boolean {
         try {
             val requestFile: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(), pictureFile.value!!)
-            image.value = MultipartBody.Part.createFormData("image", pictureFile.value!!.name, requestFile)
-            id.value = RequestBody.create("text/plain".toMediaTypeOrNull(), request.id)
-            content.value = RequestBody.create("text/plain".toMediaTypeOrNull(), request.content)
+            picture.value = MultipartBody.Part.createFormData("picture", pictureFile.value!!.name, requestFile)
+            content.value = RequestBody.create("text/plain".toMediaTypeOrNull(),contentText.value!!)
+            return true
         }
         catch (e: NullPointerException) {
-            nullPointEvent.call()
-            return false
+            nullPointerException.call()
         }
-        return true
-    }
-
-    override fun onRetrieveDataSuccess(data: Any) {}
-
-    override fun onRetrieveBaseSuccess(message: String) {
-        openMain.value = message
+        return false
     }
 }

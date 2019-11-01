@@ -1,20 +1,20 @@
-package org.techtown.betweenus_android.model;
+package com.example.make_a_thon.model.report;
 
 import java.util.List;
 
 public class Image {
 
-    private List<String> images;
+    private String images;
 
-    public Image(List<String> images) {
+    public Image(String images) {
         this.images = images;
     }
 
-    public List<String> getImages() {
+    public String getImages() {
         return images;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(String images) {
         this.images = images;
     }
 }
