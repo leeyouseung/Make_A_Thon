@@ -18,7 +18,7 @@ interface ReportApi {
     @Multipart
     @POST("/api/report")
     fun report(@Header("token") token: String,
-                 @retrofit2.http.Part picture: MultipartBody.Part,
+                 @retrofit2.http.Part("image") image: MultipartBody.Part,
                  @retrofit2.http.Part("content") content: RequestBody): Single<retrofit2.Response<Response<Any>>>
 
     @GET("/api/report")

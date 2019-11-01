@@ -11,8 +11,8 @@ import okhttp3.RequestBody
 
 class ReportClient : BaseClient<ReportApi>() {
 
-    fun report(token: String, picture: MultipartBody.Part, content: RequestBody): Single<String> {
-        return api.report(token, picture, content).map(getResponseMessageFunction())
+    fun report(token: String, image: MultipartBody.Part, content: RequestBody): Single<String> {
+        return api.report(token, image, content).map(getResponseMessageFunction())
     }
 
     fun getReport(token: String): Single<List<ReportList>> {

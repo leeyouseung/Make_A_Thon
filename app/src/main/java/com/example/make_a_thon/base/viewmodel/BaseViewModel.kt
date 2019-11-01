@@ -40,14 +40,13 @@ abstract class BaseViewModel<D> protected constructor(application: Application) 
         isLoading.value = true
 
         disposable.add(single.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribeWith(observer as SingleObserver<Any>) as Disposable)
+            .observeOn(AndroidSchedulers.mainThread()).subscribeWith(observer as SingleObserver<Any>) as Disposable)
     }
 
     fun addDisposable(single: Single<*>, observer: DisposableSingleObserver<*>) {
         disposable.add(single.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribeWith(observer as SingleObserver<Any>) as Disposable)
+            .observeOn(AndroidSchedulers.mainThread()).subscribeWith(observer as SingleObserver<Any>) as Disposable)
     }
-
 
     val baseObserver: DisposableSingleObserver<String>
         get() = object : DisposableSingleObserver<String>() {
@@ -76,6 +75,6 @@ abstract class BaseViewModel<D> protected constructor(application: Application) 
             }
         }
 
-    protected abstract fun onRetrieveDataSuccess(data: D)
-    protected abstract fun onRetrieveBaseSuccess(message: String)
+    protected open fun onRetrieveDataSuccess(data: D) {}
+    protected open fun onRetrieveBaseSuccess(message: String) {}
 }

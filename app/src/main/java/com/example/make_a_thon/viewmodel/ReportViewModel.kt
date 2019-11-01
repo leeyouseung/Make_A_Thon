@@ -40,7 +40,7 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     val tempPictureUri = MutableLiveData<Uri>()
     val pictureUri = MutableLiveData<Uri>()
     private val pictureFile = MutableLiveData<File>()
-    private val picture = MutableLiveData<MultipartBody.Part>()
+    private val image = MutableLiveData<MultipartBody.Part>()
     private val id = MutableLiveData<RequestBody>()
     private val content = MutableLiveData<RequestBody>()
 
@@ -51,7 +51,7 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
             return
         }
         else {
-            addDisposable(reportClient.report(token, picture.value!!, content.value!!), baseObserver)
+            addDisposable(reportClient.report(token, image.value!!, content.value!!), baseObserver)
         }
     }
 
@@ -85,7 +85,7 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     private fun setRequest(): Boolean {
         try {
             val requestFile: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(), pictureFile.value!!)
-            picture.value = MultipartBody.Part.createFormData("photo", pictureFile.value!!.name, requestFile)
+            image.value = MultipartBody.Part.createFormData("image", pictureFile.value!!.name, requestFile)
             id.value = RequestBody.create("text/plain".toMediaTypeOrNull(), request.id)
             content.value = RequestBody.create("text/plain".toMediaTypeOrNull(), request.content)
         }
