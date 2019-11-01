@@ -20,7 +20,7 @@ class ReportItemViewModel : BaseItemViewModel<ReportList, ReportItemNavigator>()
 //        var rescueDate = myFormat.format(data.createdAt).split("T")[0]
 //        var rescueTime = myFormat.format(data.createdAt).split("T")[1].split(".")[0]
 
-        time.value = data.createdAt + " 완료"
+        time.value = data.createdAt + "  완료"
         content.value = data.content
     }
 
