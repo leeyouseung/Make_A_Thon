@@ -188,8 +188,7 @@
                             android:layout_height="match_parent"
                             android:imeOptions="flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                             android:inputType="textEmailAddress"
-                            android:privateImeOptions="nm"
-                            android:text="@={viewmodel.request.content}" />
+                            android:privateImeOptions="nm" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
