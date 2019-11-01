@@ -24,7 +24,7 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     val tempPictureUri: MutableLiveData<Uri> = MutableLiveData()
     val pictureUri: MutableLiveData<Uri> = MutableLiveData()
     private val pictureFile: MutableLiveData<File> = MutableLiveData()
-    private val picture: MutableLiveData<MultipartBody.Part> = MutableLiveData()
+    private val image: MutableLiveData<MultipartBody.Part> = MutableLiveData()
 
     val contentText = MutableLiveData<String>()
     private val content = MutableLiveData<RequestBody>()
@@ -32,10 +32,9 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     val nullPointerException = SingleLiveEvent<Unit>()
     val goToCrop: SingleLiveEvent<Unit> = SingleLiveEvent()
 
-
     fun report() {
         if (!setRequest()) return
-        addDisposable(reportClient.report(token, picture.value!!, content.value!!), baseObserver)
+        addDisposable(reportClient.report(token, image.value!!, content.value!!), baseObserver)
     }
 
     fun savePickData(data: Intent) {
@@ -62,7 +61,7 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     private fun setRequest(): Boolean {
         try {
             val requestFile: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(), pictureFile.value!!)
-            picture.value = MultipartBody.Part.createFormData("image", pictureFile.value!!.name, requestFile)
+            image.value = MultipartBody.Part.createFormData("image", pictureFile.value!!.name, requestFile)
             content.value = RequestBody.create("text/plain".toMediaTypeOrNull(), contentText.value!!)
             return true
         }

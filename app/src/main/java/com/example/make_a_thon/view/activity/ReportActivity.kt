@@ -3,7 +3,6 @@ package com.example.make_a_thon.view.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 
