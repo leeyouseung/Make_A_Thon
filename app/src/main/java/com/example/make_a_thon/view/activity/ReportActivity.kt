@@ -2,6 +2,7 @@ package com.example.make_a_thon.view.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
@@ -32,10 +33,6 @@ class ReportActivity : BasePictureActivity<ActivityReportBinding, ReportViewMode
             goToCrop.observe(this@ReportActivity, Observer {
                 goToCropPage(viewModel.tempPictureUri.value, viewModel.pictureUri.value)
             })
-
-            goToAlbumEvent.observe(this@ReportActivity, Observer {
-                goToAlbum()
-            })
         }
     }
 
@@ -43,10 +40,18 @@ class ReportActivity : BasePictureActivity<ActivityReportBinding, ReportViewMode
         super.onCreate(savedInstanceState)
 
         setUp()
+
+        clickEvent()
     }
 
     private fun setUp() {
         tedPermission()
+    }
+
+    private fun clickEvent() {
+        binding.inputImg.setOnClickListener {
+            goToAlbum()
+        }
     }
 
     override fun pickNextEvent(data: Intent) {

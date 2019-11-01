@@ -26,8 +26,6 @@ class ReportViewModel(application: Application) : BaseViewModel<ReportViewModel>
     private val pictureFile: MutableLiveData<File> = MutableLiveData()
     private val picture: MutableLiveData<MultipartBody.Part> = MutableLiveData()
 
-    val goToAlbumEvent = SingleLiveEvent<Unit>()
-
     val contentText = MutableLiveData<String>()
     private val content = MutableLiveData<RequestBody>()
 
@@ -38,10 +36,6 @@ class ReportViewModel(application: Application) : BaseViewModel<ReportViewModel>
     fun report() {
         if (!setRequest()) return
         addDisposable(reportClient.report(token, picture.value!!, content.value!!), baseObserver)
-    }
-
-    fun goToAlbum() {
-        goToAlbumEvent.call()
     }
 
     fun savePickData(data: Intent) {
