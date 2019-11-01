@@ -36,6 +36,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
                 }
                 login()
             })
+
+            openMain.observe(this@LoginActivity, Observer {
+                startActivityWithFinish(MainActivity::class.java)
+            })
         }
     }
 

@@ -15,6 +15,8 @@ class LoginViewModel(application: Application) : BaseViewModel<LoginData>(applic
     val loginEvent = SingleLiveEvent<Unit>()
     val signUpEvent = SingleLiveEvent<Unit>()
 
+    val openMain = SingleLiveEvent<Unit>()
+
     var request = LoginRequest()
 
     fun login() {
@@ -31,5 +33,7 @@ class LoginViewModel(application: Application) : BaseViewModel<LoginData>(applic
 
     override fun onRetrieveDataSuccess(data: LoginData) {}
 
-    override fun onRetrieveBaseSuccess(message: String) {}
+    override fun onRetrieveBaseSuccess(message: String) {
+        openMain.call()
+    }
 }
