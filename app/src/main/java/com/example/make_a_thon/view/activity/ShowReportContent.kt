@@ -2,6 +2,8 @@ package com.example.make_a_thon.view.activity
 
 import android.os.Bundle
 
+import androidx.lifecycle.Observer
+
 import com.example.make_a_thon.BR
 import com.example.make_a_thon.R
 import com.example.make_a_thon.base.activity.BaseActivity
@@ -25,6 +27,9 @@ class ShowReportContent : BaseActivity<ActivityShowReportContentBinding, ShowRep
     override fun initObserver() {
         with(viewModel) {
 
+            backEvent.observe(this@ShowReportContent, Observer {
+                finish()
+            })
         }
     }
 
