@@ -56,8 +56,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Navigat
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        menuSetting()
-
         binding.navView.setNavigationItemSelectedListener(this::onNavigationItemSelected)
 
         clickEvent()
@@ -103,24 +101,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Navigat
         binding.main.closeDrawers()
 
         return false
-    }
-
-    private fun menuSetting() {
-//        val currentUser = CurrentUser(this, "betweenUs.db", null, 1)
-//        val myInfo = currentUser.getResult()
-//
-//        val profileImage = binding.navView.getHeaderView(0).findViewById(R.id.profile) as ImageView
-//        val nameText = binding.navView.getHeaderView(0).findViewById(R.id.name) as TextView
-//        val schoolText = binding.navView.getHeaderView(0).findViewById(R.id.school) as TextView
-//
-//        Log.d("imgTag", myInfo.getprofileImg())
-//        if (!myInfo.getprofileImg().isEmpty()) {
-//            Log.d("imgTag", "Pass")
-//            Glide.with(this).load(myInfo.getprofileImg()).into(profileImage)
-//        }
-//
-//        nameText.setText(myInfo.getName())
-//        schoolText.setText(myInfo.getSchool())
     }
 
     private fun clickEvent() {

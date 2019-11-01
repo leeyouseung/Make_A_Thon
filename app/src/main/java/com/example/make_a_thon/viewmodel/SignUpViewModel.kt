@@ -29,6 +29,5 @@ class SignUpViewModel(application: Application) : BaseViewModel<Any>(application
 
     override fun onRetrieveBaseSuccess(message: String) {
         onSuccessEvent.value = message
-        openLoginEvent.call()
     }
 }

@@ -20,11 +20,7 @@
         <activity android:name=".view.activity.CCTVActivity" />
         <activity android:name=".view.activity.SignUpActivity" />
         <activity android:name=".view.activity.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".view.activity.ReportActivity" />
         <activity android:name=".view.activity.ProFileActivity" />
@@ -34,7 +30,11 @@
 
         </activity>
         <activity android:name=".view.activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <uses-library

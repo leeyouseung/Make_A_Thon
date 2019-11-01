@@ -26,7 +26,13 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding, SignUpViewModel>() {
         with(viewModel) {
 
             onSuccessEvent.observe(this@SignUpActivity, Observer {
-                simpleToast(it)
+                if(it == "success") {
+                    startActivityWithFinish(LoginActivity::class.java)
+                }
+                else {
+                    simpleToast("로그인 실패")
+                    return@Observer
+                }
             })
 
             signUpEvent.observe(this@SignUpActivity, Observer {

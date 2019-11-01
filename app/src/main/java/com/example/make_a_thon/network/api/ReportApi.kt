@@ -16,11 +16,11 @@ import retrofit2.http.POST
 interface ReportApi {
 
     @Multipart
-    @POST("/report")
-    fun report(@Header("Authorization") token: String,
+    @POST("/api/report")
+    fun report(@Header("token") token: String,
                  @retrofit2.http.Part picture: MultipartBody.Part,
                  @retrofit2.http.Part("content") content: RequestBody): Single<retrofit2.Response<Response<Any>>>
 
-    @GET("/getReport")
+    @GET("/api/report")
     fun getReport(@Header("Authorization") token: String): Single<retrofit2.Response<Response<List<ReportList>>>>
 }

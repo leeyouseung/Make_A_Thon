@@ -44,7 +44,7 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     private val id = MutableLiveData<RequestBody>()
     private val content = MutableLiveData<RequestBody>()
 
-    val openMain = SingleLiveEvent<Unit>()
+    val openMain = SingleLiveEvent<String>()
 
     fun signUp() {
         if(!setRequest()) {
@@ -99,6 +99,6 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     override fun onRetrieveDataSuccess(data: Any) {}
 
     override fun onRetrieveBaseSuccess(message: String) {
-        openMain.call()
+        openMain.value = message
     }
 }

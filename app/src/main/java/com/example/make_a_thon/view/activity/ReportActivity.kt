@@ -47,7 +47,13 @@ class ReportActivity : BasePictureActivity<ActivityReportBinding, ReportViewMode
             })
 
             openMain.observe(this@ReportActivity, Observer {
-                startActivityWithFinish(MainActivity::class.java)
+                if(it == "success") {
+                    startActivityWithFinish(MainActivity::class.java)
+                }
+                else {
+                    simpleToast("실패")
+                    return@Observer
+                }
             })
         }
     }
