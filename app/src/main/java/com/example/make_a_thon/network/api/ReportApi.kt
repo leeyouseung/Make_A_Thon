@@ -9,7 +9,7 @@ import retrofit2.http.*
 
 interface ReportApi {
 
-    @GET("/api/report")
+    @GET("/api/report/data")
     fun getReportList(@Header("token") token: String): Single<retrofit2.Response<Response<List<ReportList>>>>
 
 //    @GET("/api/reportInfo/{id}")
