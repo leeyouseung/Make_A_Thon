@@ -4,12 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="viewmodel"
-            type="com.example.make_a_thon.viewmodel.ReportViewModel" />
-    </data>
-
     <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,7 +33,7 @@
                 android:layout_height="100dp"
                 android:adjustViewBounds="true"
                 android:layout_marginTop="12dp"
-                android:src="@{viewmodel.pictureUri}"
+                android:src="@drawable/photo_img"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/app_bar" />
@@ -87,8 +81,7 @@
                             android:layout_height="match_parent"
                             android:imeOptions="flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                             android:inputType="textEmailAddress"
-                            android:privateImeOptions="nm"
-                            android:text="@={viewmodel.contentText}"/>
+                            android:privateImeOptions="nm"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,7 +102,6 @@
                 android:text="신고하기"
                 android:textColor="@color/white"
                 android:textSize="7pt"
-                android:onClick="@{() -> viewmodel.report()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/loginLayoutCardView"
                 app:layout_constraintStart_toStartOf="@+id/loginLayoutCardView"
