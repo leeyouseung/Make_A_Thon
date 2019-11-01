@@ -64,9 +64,6 @@ public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initViewModel();
-        initImg();
-
         binding.reportBtn.setOnClickListener(v -> {
 
             RequestBody reqImage = RequestBody.create(MediaType.parse("image/*"), file);
@@ -81,7 +78,6 @@ public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
             reportRequestCall.enqueue(new Callback<ReportRequest>() {
                 @Override
                 public void onResponse(Call<ReportRequest> call, Response<ReportRequest> response) {
-                    Toast.makeText(getApplicationContext(), "신고가 접수 되었습니다", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }
@@ -94,16 +90,6 @@ public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
         });
 
         clickEvent();
-    }
-
-    private void initViewModel() {
-
-//        reportViewModel = ViewModelProviders.of(this, new ViewModelFactory(this)).get(ReportViewModel.class);
-//        imgUploadViewModel = ViewModelProviders.of(this, new ViewModelFactory(this)).get(ImgUploadViewModel.class);
-    }
-
-    private void initImg() {
-//        Glide.with(this).load(imgUploadViewModel.uri.getValue()).into(binding.inputImg);
     }
 
     private void clickEvent() {

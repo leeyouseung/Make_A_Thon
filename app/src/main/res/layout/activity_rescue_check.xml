@@ -38,19 +38,82 @@
                 android:layout_height="match_parent"
                 tools:context=".view.activity.RescueCheckActivity">
 
+                <TextView
+                    android:id="@+id/start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="140dp"
+                    android:fontFamily="@font/nanum_squarer"
+                    android:text="출발시간"
+                    android:textColor="@color/black"
+                    android:textSize="8pt"
+                    app:layout_constraintEnd_toStartOf="@+id/end_time"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="도착시간"
+                    android:fontFamily="@font/nanum_squarer"
+                    android:textSize="8pt"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/start_time"
+                    app:layout_constraintTop_toTopOf="@+id/start_time"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="17 : 30"
+                    android:textColor="@color/black"
+                    android:textSize="10pt"
+                    android:background="@drawable/rescue_time_button_radius"
+                    android:gravity="center"
+                    android:fontFamily="@font/nanum_squareeb"
+                    app:layout_constraintEnd_toEndOf="@+id/start_time"
+                    app:layout_constraintStart_toStartOf="@+id/start_time"
+                    app:layout_constraintTop_toBottomOf="@+id/start_time"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="18 : 00"
+                    android:textColor="@color/black"
+                    android:textSize="10pt"
+                    android:background="@drawable/rescue_time_button_radius"
+                    android:gravity="center"
+                    android:fontFamily="@font/nanum_squareeb"
+                    app:layout_constraintEnd_toEndOf="@+id/end_time"
+                    app:layout_constraintStart_toStartOf="@+id/end_time"
+                    app:layout_constraintTop_toBottomOf="@+id/end_time"
+                    tools:ignore="HardcodedText" />
+
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
-                    app:srcCompat="@drawable/police_car"
-                    tools:layout_editor_absoluteX="130dp"
-                    tools:layout_editor_absoluteY="296dp" />
+                    android:layout_marginTop="80dp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView8"
+                    app:layout_constraintStart_toStartOf="@+id/textView7"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7"
+                    app:srcCompat="@drawable/police_car" />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="36dp"
                     android:fontFamily="@font/nanum_squarer"
                     android:text="구조대가 출발한지 0분이 지났습니다"
                     android:textColor="@color/black"
@@ -64,8 +127,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="도착까지 약 0분 남았습니다"
                     android:fontFamily="@font/nanum_squarer"
+                    android:text="도착까지 약 0분 남았습니다"
                     android:textColor="@color/black"
                     android:textSize="8pt"
                     app:layout_constraintEnd_toEndOf="@+id/textView"
