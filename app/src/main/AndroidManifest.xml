@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.make_a_thon">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/makathon_logo_img"
@@ -9,19 +15,16 @@
         android:roundIcon="@drawable/makathon_logo_img"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.ReportListActivity"/>
+        <activity android:name=".view.activity.ShowReportContent"></activity>
+        <activity android:name=".view.activity.ReportListActivity" />
         <activity android:name=".view.activity.CCTVActivity" />
         <activity android:name=".view.activity.SignUpActivity" />
-        <activity android:name=".view.activity.LoginActivity" >
-
-        </activity>
+        <activity android:name=".view.activity.LoginActivity"></activity>
         <activity android:name=".view.activity.ReportActivity" />
         <activity android:name=".view.activity.ProFileActivity" />
         <activity android:name=".view.activity.RescueCheckActivity" />
         <activity android:name=".view.activity.MyPlaceActivity" />
-        <activity android:name=".view.animation.SplashActivity" >
-
-        </activity>
+        <activity android:name=".view.animation.SplashActivity"></activity>
         <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,17 +33,13 @@
             </intent-filter>
         </activity>
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCAkiQf3k_UC67NnOhZ73meYZGQUUtvkdM"/>
+            android:value="AIzaSyCAkiQf3k_UC67NnOhZ73meYZGQUUtvkdM" />
     </application>
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
