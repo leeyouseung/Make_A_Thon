@@ -1,6 +1,9 @@
 package com.example.make_a_thon.view.activity
 
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.core.view.GravityCompat
 
 import com.example.make_a_thon.BR
 import com.example.make_a_thon.R
@@ -14,8 +17,9 @@ import com.google.android.gms.maps.MapFragment
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.navigation.NavigationView
 
-class MyPlaceActivity : BaseActivity<ActivityMyPlaceBinding, MyPlaceViewModel>(), OnMapReadyCallback {
+class MyPlaceActivity : BaseActivity<ActivityMyPlaceBinding, MyPlaceViewModel>(), OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_my_place
@@ -41,6 +45,52 @@ class MyPlaceActivity : BaseActivity<ActivityMyPlaceBinding, MyPlaceViewModel>()
         val fragmentManager = fragmentManager
         val mapFragment = fragmentManager.findFragmentById(R.id.map) as MapFragment
         mapFragment.getMapAsync(this)
+
+        binding.navView.setNavigationItemSelectedListener(this::onNavigationItemSelected)
+
+        clickEvent()
+    }
+
+    override fun onBackPressed() {
+        if (binding.main.isDrawerOpen(GravityCompat.START)) {
+            binding.main.closeDrawers()
+        }
+        else {
+            super.onBackPressed()
+        }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+
+        when(id) {
+            R.id.menu_my_profile -> {
+                startActivity(ProFileActivity::class.java)
+            }
+            R.id.menu_my_place -> {
+                startActivity(MyPlaceActivity::class.java)
+            }
+            R.id.menu_report -> {
+                startActivity(ReportActivity::class.java)
+            }
+            R.id.menu_report_list -> {
+                startActivity(ReportListActivity::class.java)
+            }
+            R.id.menu_cctv -> {
+                startActivity(CCTVActivity::class.java)
+            }
+            R.id.menu_check_rescue -> {
+                startActivity(RescueCheckActivity::class.java)
+            }
+            else -> {
+                Toast.makeText(this, "문제가 발생하였습니다", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        overridePendingTransition(0, 0)
+        binding.main.closeDrawers()
+
+        return false
     }
 
     override fun onMapReady(map: GoogleMap?) {
@@ -50,9 +100,20 @@ class MyPlaceActivity : BaseActivity<ActivityMyPlaceBinding, MyPlaceViewModel>()
 
         markerOptions.position(SEOUL)
         markerOptions.title("서울")
+        markerOptions.snippet("한국의 수도")
 
         map!!.addMarker(markerOptions)
         map.moveCamera(CameraUpdateFactory.newLatLng(SEOUL))
-        map.animateCamera(CameraUpdateFactory.zoomTo(10f))
+        map.animateCamera(CameraUpdateFactory.zoomTo(12f))
+    }
+
+    private fun clickEvent() {
+        onClickMenuBtn()
+    }
+
+    private fun onClickMenuBtn() {
+        binding.menuMainBtn.setOnClickListener {
+            binding.main.openDrawer(GravityCompat.START)
+        }
     }
 }
