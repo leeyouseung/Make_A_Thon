@@ -12,9 +12,9 @@ import retrofit2.http.POST
 
 interface SignApi {
 
-    @POST("/login")
+    @POST("/api/user/login")
     fun login(@Body loginRequest: LoginRequest): Single<retrofit2.Response<Response<LoginData>>>
 
-    @POST("/")
+    @POST("/api/user/")
     fun signUp(@Body signUpRequest: SignUpRequest): Single<retrofit2.Response<Response<Any>>>
 }
