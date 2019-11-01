@@ -2,6 +2,9 @@ package com.example.make_a_thon.view.activity
 
 import android.os.Bundle
 
+import android.webkit.WebView
+import android.webkit.WebViewClient
+
 import com.example.make_a_thon.BR
 import com.example.make_a_thon.R
 import com.example.make_a_thon.base.activity.BaseActivity
@@ -28,8 +31,17 @@ class CCTVActivity : BaseActivity<ActivityCctvBinding, CCTVViewModel>() {
         }
     }
 
+    private lateinit var webView: WebView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding.webview.webViewClient = object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+                view?.loadUrl(url)
+                return true
+            }
+        }
+        webView.loadUrl("https://www.google.co.in/")
     }
 }
