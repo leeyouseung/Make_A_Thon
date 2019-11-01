@@ -49,7 +49,6 @@ class MyPlaceActivity : BaseActivity<ActivityMyPlaceBinding, MyPlaceViewModel>()
 
         markerOptions.position(SEOUL)
         markerOptions.title("서울")
-        markerOptions.snippet("한국의 수도")
 
         map!!.addMarker(markerOptions)
         map.moveCamera(CameraUpdateFactory.newLatLng(SEOUL))
