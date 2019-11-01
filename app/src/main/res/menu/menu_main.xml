@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
 
         <item
             android:id="@+id/menu_my_profile"
@@ -14,6 +17,12 @@
             android:icon="@drawable/maps_and_flags_img"
             android:title="우리 집 CCTV 확인"/>
 
+    </group>
+
+    <group
+        android:id="@+id/menu_middle"
+        android:checkableBehavior="none">
+
         <item
             android:id="@+id/menu_report"
             android:icon="@drawable/emergency_call_icon"
@@ -23,6 +32,12 @@
             android:id="@+id/menu_report_list"
             android:icon="@drawable/clipboard_with_pencil_icon"
             android:title="신고내역"/>
+
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
 
         <item
             android:id="@+id/menu_cctv"
@@ -35,5 +50,5 @@
             android:title="구조대 현황 확인"/>
 
     </group>
-    
+
 </menu>
