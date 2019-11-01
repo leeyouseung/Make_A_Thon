@@ -12,7 +12,7 @@ class ReportClient : BaseClient<ReportApi>() {
         return ReportApi::class.java
     }
 
-    fun getReport(token: String): Single<List<ReportList>> {
-        return api.getReport(token).map(getResponseObjectsFunction())
+    fun getReportList(token: String): Single<List<ReportList>> {
+        return api.getReportList(token).map(getResponseObjectsFunction())
     }
 }

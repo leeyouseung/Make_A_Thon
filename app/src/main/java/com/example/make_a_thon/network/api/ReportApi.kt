@@ -10,5 +10,8 @@ import retrofit2.http.*
 interface ReportApi {
 
     @GET("/api/report")
-    fun getReport(@Header("token") token: String): Single<retrofit2.Response<Response<List<ReportList>>>>
+    fun getReportList(@Header("token") token: String): Single<retrofit2.Response<Response<List<ReportList>>>>
+
+//    @GET("/api/reportInfo/{id}")
+//    fun getReport(@Header("token") token: String, @Path("id") id: Int): Single<retrofit2.Response<Response<ReportList>>>
 }

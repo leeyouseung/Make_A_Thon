@@ -14,7 +14,7 @@ class ReportListViewModel(application: Application) : BaseViewModel<List<ReportL
     var reportAdapter = ReportAdapter()
 
     fun getReportList() {
-        addDisposable(reportClient.getReport(token), dataObserver)
+        addDisposable(reportClient.getReportList(token), dataObserver)
     }
 
     override fun onRetrieveDataSuccess(data: List<ReportList>) {

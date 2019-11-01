@@ -13,9 +13,9 @@ class ReportViewHolder(val binding: ItemReportListBinding) : BaseViewHolder<Repo
 
     private lateinit var reportList: ReportList
 
-    override fun clickItemEvent() {
-        getNavigator().intentItem()
-    }
+//    override fun clickItemEvent() {
+//        getNavigator().intentItem()
+//    }
 
     fun bind(data: ReportList) {
         viewModel.bind(data)

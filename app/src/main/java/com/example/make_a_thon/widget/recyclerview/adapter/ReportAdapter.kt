@@ -28,9 +28,9 @@ class ReportAdapter : Adapter<ReportViewHolder>(), ReportAdapterNavigator {
         holder.bind(reportLists[position])
     }
 
-    override fun intentItem() {
-        intentItem.call()
-    }
+//    override fun intentItem() {
+//        intentItem.call()
+//    }
 
     fun updateList(reportLists: List<ReportList>?) {
         this.reportLists = reportLists!!
