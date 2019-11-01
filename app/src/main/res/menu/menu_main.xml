@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <group android:checkableBehavior="single">
 
@@ -34,4 +35,5 @@
             android:title="구조대 현황 확인"/>
 
     </group>
+    
 </menu>
