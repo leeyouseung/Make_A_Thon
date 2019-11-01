@@ -40,6 +40,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
     }
 
     private fun isEmpty(): Boolean {
-        return viewModel.request.email == null || viewModel.request.password == null
+        return viewModel.request.id == null || viewModel.request.password == null
     }
 }

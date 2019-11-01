@@ -15,6 +15,6 @@ interface SignApi {
     @POST("/login")
     fun login(@Body loginRequest: LoginRequest): Single<retrofit2.Response<Response<LoginData>>>
 
-    @POST("/signUp")
+    @POST("/")
     fun signUp(@Body signUpRequest: SignUpRequest): Single<retrofit2.Response<Response<Any>>>
 }
