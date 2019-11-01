@@ -11,7 +11,7 @@
         <item
             android:id="@+id/menu_my_place"
             android:icon="@drawable/maps_and_flags_img"
-            android:title="내 위치 확인"/>
+            android:title="우리 집 CCTV 확인"/>
 
         <item
             android:id="@+id/menu_report"
@@ -26,7 +26,7 @@
         <item
             android:id="@+id/menu_cctv"
             android:icon="@drawable/search_icon"
-            android:title="조회하기"/>
+            android:title="나의 집 조회하기"/>
 
         <item
             android:id="@+id/menu_check_rescue"

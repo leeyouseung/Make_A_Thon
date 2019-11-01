@@ -17,7 +17,11 @@ import android.provider.MediaStore;
 
 import android.util.Log;
 
+import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
 
 import com.example.make_a_thon.R;
 import com.example.make_a_thon.base_java.BaseActivityJava;
@@ -27,6 +31,7 @@ import com.example.make_a_thon.network.api.ReportApiJava;
 import com.example.make_a_thon.network.request.ReportRequest;
 import com.example.make_a_thon.util.UtilsJava;
 
+import com.google.android.material.navigation.NavigationView;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
@@ -42,7 +47,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
+public class ReportActivity extends BaseActivityJava<ActivityReportBinding> implements NavigationView.OnNavigationItemSelectedListener {
 
     File tempFile;
     File file;
@@ -63,6 +68,8 @@ public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        binding.navView.setNavigationItemSelectedListener(item -> onNavigationItemSelected(item));
 
         binding.reportBtn.setOnClickListener(v -> {
 
@@ -95,6 +102,18 @@ public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
     private void clickEvent() {
 
         binding.inputImg.setOnClickListener(v -> goToAlbum());
+
+        onClickMenuBtn();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (binding.main.isDrawerOpen(GravityCompat.START)) {
+            binding.main.closeDrawers();
+        }
+        else {
+            super.onBackPressed();
+        }
     }
 
     private void goToAlbum() {
@@ -169,5 +188,40 @@ public class ReportActivity extends BaseActivityJava<ActivityReportBinding> {
         } else {
             Log.d("IMAGE", "null임");
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        switch(id) {
+
+            case R.id.menu_my_profile: startActivity(new Intent(getApplicationContext(), ProFileActivity.class));
+
+            case R.id.menu_my_place: startActivity(new Intent(getApplicationContext(), MyPlaceActivity.class));
+
+            case R.id.menu_report: startActivity(new Intent(getApplicationContext(), ReportActivity.class));
+
+            case R.id.menu_report_list: startActivity(new Intent(getApplicationContext(), ReportListActivity.class));
+
+            case R.id.menu_cctv: startActivity(new Intent(getApplicationContext(), CCTVActivity.class));
+
+            case R.id.menu_check_rescue:startActivity(new Intent(getApplicationContext(), RescueCheckActivity.class));
+
+            default: Toast.makeText(this, "문제가 발생하였습니다", Toast.LENGTH_SHORT).show();
+        }
+
+        overridePendingTransition(0, 0);
+        binding.main.closeDrawers();
+
+        return false;
+    }
+
+    private void onClickMenuBtn() {
+        binding.menuMainBtn.setOnClickListener(v -> {
+
+            binding.main.openDrawer(GravityCompat.START);
+        });
     }
 }
