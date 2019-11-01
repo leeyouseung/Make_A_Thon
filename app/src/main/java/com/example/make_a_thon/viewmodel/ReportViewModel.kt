@@ -17,9 +17,9 @@ import java.io.IOException
 import java.lang.NullPointerException
 import java.util.*
 
-class ReportViewModel(application: Application) : BaseViewModel<ReportViewModel>(application) {
+class ReportViewModel(application: Application) : BaseViewModel<Any>(application) {
 
-    val reportClient = ReportClient()
+    private val reportClient = ReportClient()
 
     val tempPictureUri: MutableLiveData<Uri> = MutableLiveData()
     val pictureUri: MutableLiveData<Uri> = MutableLiveData()
@@ -62,8 +62,8 @@ class ReportViewModel(application: Application) : BaseViewModel<ReportViewModel>
     private fun setRequest(): Boolean {
         try {
             val requestFile: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(), pictureFile.value!!)
-            picture.value = MultipartBody.Part.createFormData("picture", pictureFile.value!!.name, requestFile)
-            content.value = RequestBody.create("text/plain".toMediaTypeOrNull(),contentText.value!!)
+            picture.value = MultipartBody.Part.createFormData("image", pictureFile.value!!.name, requestFile)
+            content.value = RequestBody.create("text/plain".toMediaTypeOrNull(), contentText.value!!)
             return true
         }
         catch (e: NullPointerException) {
@@ -71,4 +71,6 @@ class ReportViewModel(application: Application) : BaseViewModel<ReportViewModel>
         }
         return false
     }
+
+    override fun onRetrieveBaseSuccess(message: String) {}
 }

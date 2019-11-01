@@ -39,11 +39,10 @@
                 android:layout_height="100dp"
                 android:adjustViewBounds="true"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/user_icon"
+                app:mutableImageUri="@{viewmodel.pictureUri}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/app_bar"
-                tools:ignore="ContentDescription" />
+                app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/loginLayoutCardView"
