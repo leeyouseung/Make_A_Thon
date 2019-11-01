@@ -13,8 +13,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:background="@color/bright_gray"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:onClick="@{() -> viewmodel.onClickItem()}">
+    android:layout_height="100dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
