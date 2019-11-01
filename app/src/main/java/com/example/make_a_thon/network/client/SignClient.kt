@@ -11,7 +11,6 @@ import io.reactivex.Single
 class SignClient : BaseClient<SignApi>() {
 
     fun login(loginRequest: LoginRequest): Single<LoginData> {
-
         return api.login(loginRequest).map(getResponseObjectsFunction())
     }
 

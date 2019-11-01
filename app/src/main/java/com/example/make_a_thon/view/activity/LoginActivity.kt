@@ -30,12 +30,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
             })
 
             loginEvent.observe(this@LoginActivity, Observer {
-//                if(isEmpty()) {
-//                    simpleToast("빈칸 없이 입력해주세요")
-//                    return@Observer
-//                }
-//                login()
-                startActivityWithFinish(MainActivity::class.java)
+                if(isEmpty()) {
+                    simpleToast("빈칸 없이 입력해주세요")
+                    return@Observer
+                }
+                login()
             })
         }
     }

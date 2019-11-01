@@ -31,6 +31,14 @@ class ReportActivity : BasePictureActivity<ActivityReportBinding, ReportViewMode
     override fun initObserver() {
         with(viewModel) {
 
+            onSuccessEvent.observe(this@ReportActivity, Observer {
+                simpleToast(it)
+            })
+
+            nullPointEvent.observe(this@ReportActivity, Observer {
+                simpleToast("신고 사진을 등록해주세요")
+            })
+
             goToAlbumEvent.observe(this@ReportActivity, Observer {
                 tedPermission()
                 goToAlbum()
@@ -39,12 +47,11 @@ class ReportActivity : BasePictureActivity<ActivityReportBinding, ReportViewMode
             goToCropEvent.observe(this@ReportActivity, Observer {
                 goToCropPage(viewModel.tempPictureUri.value, viewModel.pictureUri.value)
             })
+
+            openMain.observe(this@ReportActivity, Observer {
+                startActivityWithFinish(MainActivity::class.java)
+            })
         }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
     }
 
     override fun pickNextEvent(data: Intent) {

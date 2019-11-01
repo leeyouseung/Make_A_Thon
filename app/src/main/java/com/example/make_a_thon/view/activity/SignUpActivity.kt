@@ -30,12 +30,11 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding, SignUpViewModel>() {
             })
 
             signUpEvent.observe(this@SignUpActivity, Observer {
-//                if(isEmpty()) {
-//                    simpleToast("빈칸 없이 입력해주세요")
-//                    return@Observer
-//                }
-//                signUp()
-                startActivityWithFinish(LoginActivity::class.java)
+                if(isEmpty()) {
+                    simpleToast("빈칸 없이 입력해주세요")
+                    return@Observer
+                }
+                signUp()
             })
 
             openLoginEvent.observe(this@SignUpActivity, Observer {

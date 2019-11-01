@@ -19,51 +19,21 @@
         <ImageView
             android:id="@+id/input_img"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginTop="12dp"
-            android:src="@drawable/photo_img"
+            android:src="@{viewmodel.pictureUri}"
             android:onClick="@{() -> viewmodel.onClickInputImgBtn()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/report_btn_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="가택침입"
-            app:layout_constraintEnd_toStartOf="@+id/report_btn_2"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/report_btn_2" />
-
-        <Button
-            android:id="@+id/report_btn_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="주거문제"
-            app:layout_constraintEnd_toStartOf="@+id/report_btn_3"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/report_btn_1"
-            app:layout_constraintTop_toBottomOf="@+id/input_img" />
-
-        <Button
-            android:id="@+id/report_btn_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="기타"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/report_btn_2"
-            app:layout_constraintTop_toTopOf="@+id/report_btn_2" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/loginLayoutCardView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:elevation="15dp"
@@ -71,11 +41,11 @@
             app:layout_constraintBottom_toTopOf="@+id/report_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/report_btn_2">
+            app:layout_constraintTop_toBottomOf="@+id/input_img">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="2dp"
                 android:background="@color/white">
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -85,12 +55,14 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="12dp"
                     android:hint="상황설명..."
-                    app:boxBackgroundColor="@android:color/white">
+                    app:boxBackgroundColor="@android:color/white"
+                    tools:ignore="HardcodedText">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/id_text"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:text="@={viewmodel.request.content}"
                         android:imeOptions="flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                         android:inputType="textEmailAddress"
                         android:privateImeOptions="nm" />
@@ -114,9 +86,11 @@
             android:text="신고하기"
             android:textColor="@color/white"
             android:textSize="7pt"
+            android:onClick="@{() -> viewmodel.signUp()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/loginLayoutCardView"
-            app:layout_constraintStart_toStartOf="@+id/loginLayoutCardView" />
+            app:layout_constraintStart_toStartOf="@+id/loginLayoutCardView"
+            tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
