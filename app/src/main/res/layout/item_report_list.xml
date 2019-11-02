@@ -13,7 +13,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:background="@color/bright_gray"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="120dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/status_img"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:scaleType="centerInside"
