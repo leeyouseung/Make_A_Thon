@@ -104,7 +104,7 @@ class MyPlaceActivity : BaseActivity<ActivityMyPlaceBinding, MyPlaceViewModel>()
 
         map!!.addMarker(markerOptions)
         map.moveCamera(CameraUpdateFactory.newLatLng(SEOUL))
-        map.animateCamera(CameraUpdateFactory.zoomTo(12f))
+        map.animateCamera(CameraUpdateFactory.zoomTo(10f))
     }
 
     private fun clickEvent() {
