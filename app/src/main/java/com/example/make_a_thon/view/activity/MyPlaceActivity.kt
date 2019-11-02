@@ -94,13 +94,13 @@ class MyPlaceActivity : BaseActivity<ActivityMyPlaceBinding, MyPlaceViewModel>()
     }
 
     override fun onMapReady(map: GoogleMap?) {
-        val SEOUL = LatLng(37.56, 126.97)
+        val SEOUL = LatLng(35.907235, 128.613107)
 
         val markerOptions = MarkerOptions()
 
         markerOptions.position(SEOUL)
-        markerOptions.title("서울")
-        markerOptions.snippet("한국의 수도")
+        markerOptions.title("엑스코")
+        markerOptions.snippet("우리집 CCTV")
 
         map!!.addMarker(markerOptions)
         map.moveCamera(CameraUpdateFactory.newLatLng(SEOUL))
