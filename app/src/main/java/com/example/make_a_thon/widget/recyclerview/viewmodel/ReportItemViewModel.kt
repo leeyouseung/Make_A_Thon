@@ -13,7 +13,7 @@ class ReportItemViewModel : BaseItemViewModel<ReportList, ReportItemNavigator>()
     val time = MutableLiveData<String>()
     val content = MutableLiveData<String>()
 
-
+//    val imageView: ImageView()
     var status : String = ""
 
     override fun bind(data: ReportList) {
@@ -23,6 +23,7 @@ class ReportItemViewModel : BaseItemViewModel<ReportList, ReportItemNavigator>()
             status = "대기 중"
         }
         else if(data.rescueState == 1) {
+
             status = "완료"
         }
 
