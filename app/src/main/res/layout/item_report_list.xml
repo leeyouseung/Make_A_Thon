@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:fontFamily="@font/nanum_squarel"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="8dp"
             android:maxLines="1"
             android:text="@{viewmodel.time}"
             android:textColor="@color/black"
