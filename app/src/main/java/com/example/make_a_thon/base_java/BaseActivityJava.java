@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
-public abstract class BaseActivityJava<VB extends ViewDataBinding> extends AppCompatActivity {
+import com.example.make_a_thon.base.viewmodel.BaseViewModel;
+
+public abstract class BaseActivityJava<VB extends ViewDataBinding, C extends BaseViewModel<Object>> extends AppCompatActivity {
 
     protected VB binding;
 

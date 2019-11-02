@@ -24,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 
 import com.example.make_a_thon.R;
+import com.example.make_a_thon.base.viewmodel.BaseViewModel;
 import com.example.make_a_thon.base_java.BaseActivityJava;
 import com.example.make_a_thon.database.sharedpreference.Token;
 import com.example.make_a_thon.databinding.ActivityReportBinding;
@@ -47,7 +48,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ReportActivity extends BaseActivityJava<ActivityReportBinding> implements NavigationView.OnNavigationItemSelectedListener {
+public class ReportActivity extends BaseActivityJava<ActivityReportBinding, BaseViewModel<Object>> implements NavigationView.OnNavigationItemSelectedListener {
 
     File tempFile;
     File file;
