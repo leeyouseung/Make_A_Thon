@@ -30,7 +30,7 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding, SignUpViewModel>() {
                     startActivityWithFinish(LoginActivity::class.java)
                 }
                 else {
-                    simpleToast("로그인 실패")
+                    simpleToast("회원가입 실패")
                     return@Observer
                 }
             })
