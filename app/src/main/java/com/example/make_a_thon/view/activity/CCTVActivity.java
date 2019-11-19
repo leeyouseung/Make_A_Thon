@@ -1,6 +1,7 @@
 package com.example.make_a_thon.view.activity;
 
 import android.os.Bundle;
+
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -12,13 +13,20 @@ import com.example.make_a_thon.viewmodel.CCTVViewModel;
 
 public class CCTVActivity extends BaseActivityJava<ActivityCctvBinding, CCTVViewModel> {
 
+    private WebView mWebView; // 웹뷰 선언
+    private WebSettings mWebSettings; //웹뷰세팅
+
     @Override
-    protected int layoutId() {
+    protected int getLayoutId() {
+
         return R.layout.activity_cctv;
     }
 
-    private WebView mWebView; // 웹뷰 선언
-    private WebSettings mWebSettings; //웹뷰세팅
+    @Override
+    protected Class<CCTVViewModel> getViewModel() {
+
+        return CCTVViewModel.class;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
