@@ -48,7 +48,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ReportActivity extends BaseActivityJava<ActivityReportBinding, BaseViewModel<Object>> implements NavigationView.OnNavigationItemSelectedListener {
+public class ReportActivity extends BaseActivityJava<ActivityReportBinding> implements NavigationView.OnNavigationItemSelectedListener {
 
     File tempFile;
     File file;

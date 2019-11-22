@@ -18,7 +18,6 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.ShowReportContent"></activity>
         <activity android:name=".view.activity.ReportListActivity" />
         <activity android:name=".view.activity.CCTVActivity" />
         <activity android:name=".view.activity.SignUpActivity" />
