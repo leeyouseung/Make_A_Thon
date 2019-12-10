@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.example.make_a_thon.viewmodel.ProFileViewModel" />
     </data>
 
@@ -83,7 +83,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nanum_squareeb"
-                        android:text="@{viewmodel.userName}"
+                        android:text="@{viewModel.userName}"
                         android:textColor="@android:color/black"
                         android:textSize="11pt" />
 
@@ -95,7 +95,7 @@
                         android:paddingTop="8dp"
                         android:textSize="8pt"
                         android:fontFamily="@font/nanum_squareeb"
-                        android:text="@{viewmodel.userPlace}" />
+                        android:text="@{viewModel.userPlace}" />
 
                 </LinearLayout>
 
@@ -112,7 +112,7 @@
                         android:background="@drawable/main_button_radius"
                         android:gravity="center"
                         android:text="위치 확인"
-                        android:onClick="@{() -> viewmodel.onClickMyPlaceSetBtn()}"
+                        android:onClick="@{() -> viewModel.onClickMyPlaceSetBtn()}"
                         android:fontFamily="@font/nanum_squareeb"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="7pt" />
@@ -126,7 +126,7 @@
                         android:textSize="7pt"
                         android:textColor="@color/white"
                         android:text="신고내역"
-                        android:onClick="@{() -> viewmodel.onClickReportListBtn()}"
+                        android:onClick="@{() -> viewModel.onClickReportListBtn()}"
                         android:fontFamily="@font/nanum_squareeb"
                         android:gravity="center"/>
 

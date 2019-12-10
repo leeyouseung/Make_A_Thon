@@ -18,6 +18,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.ReportActivity" />
         <activity android:name=".view.activity.ReportListActivity" />
         <activity android:name=".view.activity.CCTVActivity" />
         <activity android:name=".view.activity.SignUpActivity" />
@@ -28,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.ReportActivity" />
         <activity android:name=".view.activity.ProFileActivity" />
         <activity android:name=".view.activity.RescueCheckActivity" />
         <activity android:name=".view.activity.MyPlaceActivity" />

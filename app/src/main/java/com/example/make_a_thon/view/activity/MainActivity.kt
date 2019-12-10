@@ -29,7 +29,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Navigat
     }
 
     override fun getBindingVariable(): Int {
-        return BR.viewmodel
+        return BR.viewModel
     }
 
     override fun initObserver() {

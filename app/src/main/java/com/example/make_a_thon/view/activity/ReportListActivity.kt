@@ -8,8 +8,6 @@ import android.widget.Toast
 
 import androidx.core.view.GravityCompat
 
-import androidx.lifecycle.Observer
-
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -31,7 +29,7 @@ class ReportListActivity : BaseActivity<ActivityReportListBinding, ReportListVie
     }
 
     override fun getBindingVariable(): Int {
-        return BR.viewmodel
+        return BR.viewModel
     }
 
     override fun initObserver() {

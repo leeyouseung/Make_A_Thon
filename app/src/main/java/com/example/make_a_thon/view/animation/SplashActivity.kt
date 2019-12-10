@@ -23,7 +23,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
     }
 
     override fun getBindingVariable(): Int {
-        return BR.viewmodel
+        return BR.viewModel
     }
 
     override fun initObserver() {

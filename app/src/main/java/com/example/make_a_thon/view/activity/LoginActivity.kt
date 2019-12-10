@@ -19,7 +19,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
     }
 
     override fun getBindingVariable(): Int {
-        return BR.viewmodel
+        return BR.viewModel
     }
 
     override fun initObserver() {

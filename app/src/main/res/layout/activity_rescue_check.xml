@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.example.make_a_thon.viewmodel.RescueCheckViewModel" />
     </data>
 

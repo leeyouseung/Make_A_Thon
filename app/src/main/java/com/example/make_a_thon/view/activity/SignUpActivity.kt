@@ -19,7 +19,7 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding, SignUpViewModel>() {
     }
 
     override fun getBindingVariable(): Int {
-        return BR.viewmodel
+        return BR.viewModel
     }
 
     override fun initObserver() {

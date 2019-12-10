@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.example.make_a_thon.viewmodel.MainViewModel" />
     </data>
 
@@ -40,7 +40,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="80dp"
             android:background="@drawable/main_button_radius"
-            android:onClick="@{() -> viewmodel.onClickSosBtn()}"
+            android:onClick="@{() -> viewModel.onClickSosBtn()}"
             app:layout_constraintBottom_toTopOf="@+id/cctv_check_btn"
             app:layout_constraintEnd_toStartOf="@+id/my_place_set_btn"
             app:layout_constraintHorizontal_bias="0.5"
@@ -52,7 +52,7 @@
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="35dp"
-                android:onClick="@{() -> viewmodel.onClickSosBtn()}"
+                android:onClick="@{() -> viewModel.onClickSosBtn()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -67,7 +67,7 @@
                 android:text="@string/sos_title_text"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nanum_squareeb"
-                android:onClick="@{() -> viewmodel.onClickSosBtn()}"
+                android:onClick="@{() -> viewModel.onClickSosBtn()}"
                 app:layout_constraintEnd_toEndOf="@+id/sos_title_img"
                 app:layout_constraintStart_toStartOf="@+id/sos_title_img"
                 app:layout_constraintTop_toBottomOf="@+id/sos_title_img" />
@@ -81,7 +81,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/main_button_radius"
-            android:onClick="@{() -> viewmodel.onClickMyPlaceSetBtn()}"
+            android:onClick="@{() -> viewModel.onClickMyPlaceSetBtn()}"
             app:layout_constraintBottom_toTopOf="@+id/call_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -93,7 +93,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="35dp"
-                android:onClick="@{() -> viewmodel.onClickMyPlaceSetBtn()}"
+                android:onClick="@{() -> viewModel.onClickMyPlaceSetBtn()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -108,7 +108,7 @@
                 android:text="@string/my_place_set_title_text"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nanum_squareeb"
-                android:onClick="@{() -> viewmodel.onClickMyPlaceSetBtn()}"
+                android:onClick="@{() -> viewModel.onClickMyPlaceSetBtn()}"
                 app:layout_constraintEnd_toEndOf="@+id/my_place_set_img"
                 app:layout_constraintStart_toStartOf="@+id/my_place_set_img"
                 app:layout_constraintTop_toBottomOf="@+id/my_place_set_img" />
@@ -122,7 +122,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginBottom="80dp"
             android:background="@drawable/main_button_radius"
-            android:onClick="@{() -> viewmodel.onClickCctvBtn()}"
+            android:onClick="@{() -> viewModel.onClickCctvBtn()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/call_btn"
             app:layout_constraintHorizontal_bias="0.5"
@@ -134,7 +134,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="40dp"
-                android:onClick="@{() -> viewmodel.onClickCctvBtn()}"
+                android:onClick="@{() -> viewModel.onClickCctvBtn()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -149,7 +149,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/nanum_squareeb"
                 android:text="@string/lock_title_text"
-                android:onClick="@{() -> viewmodel.onClickCctvBtn()}"
+                android:onClick="@{() -> viewModel.onClickCctvBtn()}"
                 app:layout_constraintEnd_toEndOf="@+id/lock_title_img"
                 app:layout_constraintStart_toStartOf="@+id/lock_title_img"
                 app:layout_constraintTop_toBottomOf="@+id/lock_title_img" />
@@ -163,7 +163,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="80dp"
             android:background="@drawable/main_button_radius"
-            android:onClick="@{() -> viewmodel.onClickCallBtn()}"
+            android:onClick="@{() -> viewModel.onClickCallBtn()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -175,7 +175,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="35dp"
-                android:onClick="@{() -> viewmodel.onClickCallBtn()}"
+                android:onClick="@{() -> viewModel.onClickCallBtn()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -190,7 +190,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/nanum_squareeb"
                 android:text="@string/warning_title_text"
-                android:onClick="@{() -> viewmodel.onClickCallBtn()}"
+                android:onClick="@{() -> viewModel.onClickCallBtn()}"
                 app:layout_constraintEnd_toEndOf="@+id/warning_title_img"
                 app:layout_constraintStart_toStartOf="@+id/warning_title_img"
                 app:layout_constraintTop_toBottomOf="@+id/warning_title_img" />

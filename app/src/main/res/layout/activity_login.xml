@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.example.make_a_thon.viewmodel.LoginViewModel" />
     </data>
 
@@ -73,7 +73,7 @@
                         android:id="@+id/id_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@={viewmodel.request.id}"
+                        android:text="@={viewModel.request.id}"
                         android:imeOptions="flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                         android:inputType="textEmailAddress"
                         android:privateImeOptions="nm" />
@@ -93,7 +93,7 @@
                         android:id="@+id/pw_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@={viewmodel.request.password}"
+                        android:text="@={viewModel.request.password}"
                         android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                         android:inputType="textPassword"
                         android:privateImeOptions="nm" />

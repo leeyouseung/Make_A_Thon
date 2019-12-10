@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.example.make_a_thon.viewmodel.SignUpViewModel" />
     </data>
 
@@ -71,7 +71,7 @@
                         android:id="@+id/email_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@={viewmodel.request.id}"
+                        android:text="@={viewModel.request.id}"
                         android:imeOptions="flagNoExtractUi|flagNoFullscreen|flagNoAccessoryAction"
                         android:inputType="textEmailAddress"
                         android:privateImeOptions="nm" />
@@ -90,7 +90,7 @@
                         android:id="@+id/pw_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@={viewmodel.request.password}"
+                        android:text="@={viewModel.request.password}"
                         android:inputType="textPassword"
                         android:privateImeOptions="nm" />
 
@@ -125,7 +125,7 @@
                         android:id="@+id/name_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@={viewmodel.request.name}"
+                        android:text="@={viewModel.request.name}"
                         android:inputType="text"
                         android:privateImeOptions="nm" />
 
@@ -143,7 +143,7 @@
                         android:id="@+id/phone_number_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@={viewmodel.request.phoneNumber}"
+                        android:text="@={viewModel.request.phoneNumber}"
                         android:inputType="textPassword"
                         android:privateImeOptions="nm" />
 
@@ -165,7 +165,7 @@
                 android:text="@string/sign_up_text"
                 android:textColor="@color/white"
                 android:textSize="7pt"
-                android:onClick="@{() -> viewmodel.onClickSignUpBtn()}"
+                android:onClick="@{() -> viewModel.onClickSignUpBtn()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"

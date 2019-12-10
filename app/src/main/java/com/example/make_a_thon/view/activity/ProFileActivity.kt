@@ -15,15 +15,16 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.make_a_thon.BR
 import com.example.make_a_thon.R
 import com.example.make_a_thon.base.activity.BaseActivity
-import com.example.make_a_thon.databinding.ActivityProFileBinding
+import com.example.make_a_thon.databinding.ActivityProfileBinding
 import com.example.make_a_thon.viewmodel.ProFileViewModel
+
 import com.google.android.material.navigation.NavigationView
 
-class ProFileActivity : BaseActivity<ActivityProFileBinding, ProFileViewModel>()
+class ProFileActivity : BaseActivity<ActivityProfileBinding, ProFileViewModel>()
     , SwipeRefreshLayout.OnRefreshListener, NavigationView.OnNavigationItemSelectedListener {
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_pro_file
+        return R.layout.activity_profile
     }
 
     override fun getViewModel(): Class<ProFileViewModel> {
@@ -31,7 +32,7 @@ class ProFileActivity : BaseActivity<ActivityProFileBinding, ProFileViewModel>()
     }
 
     override fun getBindingVariable(): Int {
-        return BR.viewmodel
+        return BR.viewModel
     }
 
     override fun initObserver() {
