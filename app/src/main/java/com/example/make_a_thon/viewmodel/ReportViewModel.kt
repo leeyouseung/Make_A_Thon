@@ -6,4 +6,7 @@ import com.example.make_a_thon.base.viewmodel.BaseViewModel
 
 class ReportViewModel(application: Application) : BaseViewModel<Any>(application) {
 
+    override fun onRetrieveDataSuccess(data: Any) {}
+
+    override fun onRetrieveBaseSuccess(message: String) {}
 }

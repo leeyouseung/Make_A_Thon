@@ -5,7 +5,7 @@ import android.app.Application
 import com.example.make_a_thon.base.viewmodel.BaseViewModel
 import com.example.make_a_thon.widget.SingleLiveEvent
 
-class MainViewModel(application: Application) : BaseViewModel<MainViewModel>(application) {
+class MainViewModel(application: Application) : BaseViewModel<Any>(application) {
 
     val sosEvent = SingleLiveEvent<Unit>()
     val myPlaceSetEvent = SingleLiveEvent<Unit>()
@@ -28,7 +28,7 @@ class MainViewModel(application: Application) : BaseViewModel<MainViewModel>(app
         callEvent.call()
     }
 
-    override fun onRetrieveDataSuccess(data: MainViewModel) {}
+    override fun onRetrieveDataSuccess(data: Any) {}
 
     override fun onRetrieveBaseSuccess(message: String) {}
 }

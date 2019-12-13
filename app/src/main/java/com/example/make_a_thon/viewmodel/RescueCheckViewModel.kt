@@ -4,9 +4,9 @@ import android.app.Application
 
 import com.example.make_a_thon.base.viewmodel.BaseViewModel
 
-class RescueCheckViewModel(application: Application) : BaseViewModel<RescueCheckViewModel>(application) {
+class RescueCheckViewModel(application: Application) : BaseViewModel<Any>(application) {
 
-    override fun onRetrieveDataSuccess(data: RescueCheckViewModel) {}
+    override fun onRetrieveDataSuccess(data: Any) {}
 
     override fun onRetrieveBaseSuccess(message: String) {}
 }
