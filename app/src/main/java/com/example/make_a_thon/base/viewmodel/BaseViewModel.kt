@@ -75,7 +75,7 @@ abstract class BaseViewModel<D> protected constructor(application: Application) 
             }
         }
 
-    protected abstract fun onRetrieveDataSuccess(data: D)
+    protected open fun onRetrieveDataSuccess(data: D) {}
 
-    protected abstract fun onRetrieveBaseSuccess(message: String)
+    protected open fun onRetrieveBaseSuccess(message: String) {}
 }

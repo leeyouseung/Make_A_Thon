@@ -45,7 +45,7 @@ abstract class BasePictureActivity<VB : ViewDataBinding, VM : BaseViewModel<*>> 
         val permissionListener: PermissionListener = object : PermissionListener {
             override fun onPermissionGranted() {}
             override fun onPermissionDenied(deniedPermissions: ArrayList<String?>?) {
-                Toast.makeText(applicationContext, "접근을 허용해야 사진을 등록할 수 있습니다", Toast.LENGTH_LONG).show()
+                simpleToast("접근을 허용해야 사진을 등록할 수 있습니다")
             }
         }
         TedPermission.with(this)
