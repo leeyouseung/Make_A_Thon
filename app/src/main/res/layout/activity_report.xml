@@ -38,8 +38,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:adjustViewBounds="true"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/photo_img"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/none_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/app_bar" />
