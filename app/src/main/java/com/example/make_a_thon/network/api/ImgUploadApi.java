@@ -1,6 +1,5 @@
 package com.example.make_a_thon.network.api;
 
-import com.example.make_a_thon.model.report.Image;
 import com.example.make_a_thon.network.response.Response;
 
 import io.reactivex.Single;

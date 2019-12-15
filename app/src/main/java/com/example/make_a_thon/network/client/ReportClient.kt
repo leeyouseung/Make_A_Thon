@@ -12,6 +12,10 @@ class ReportClient : BaseClient<ReportApi>() {
         return ReportApi::class.java
     }
 
+    fun addReport(token: Single): Single<Report> {
+
+    }
+
     fun getReportList(token: String): Single<List<ReportList>> {
         return api.getReportList(token).map(getResponseObjectsFunction())
     }

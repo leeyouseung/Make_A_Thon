@@ -1,5 +1,6 @@
 package com.example.make_a_thon.view.activity
 
+import androidx.lifecycle.Observer
 import com.example.make_a_thon.BR
 import com.example.make_a_thon.R
 import com.example.make_a_thon.base.activity.BasePictureActivity
@@ -23,6 +24,9 @@ class ReportActivity : BasePictureActivity<ActivityReportBinding, ReportViewMode
     override fun initObserver() {
         with(viewModel) {
 
+            reportEvent.observe(this@ReportActivity, Observer {
+                simpleToast("신고되었습니다")
+            })
         }
     }
 }

@@ -108,6 +108,7 @@
                 android:text="신고하기"
                 android:textColor="@color/white"
                 android:textSize="7pt"
+                android:onClick="@{() -> viewModel.onClickReport()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/loginLayoutCardView"
                 app:layout_constraintStart_toStartOf="@+id/loginLayoutCardView"
