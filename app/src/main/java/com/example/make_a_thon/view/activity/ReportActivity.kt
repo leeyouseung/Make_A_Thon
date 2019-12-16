@@ -3,6 +3,7 @@ package com.example.make_a_thon.view.activity
 import android.content.Intent
 
 import androidx.lifecycle.Observer
+
 import com.bumptech.glide.Glide
 
 import com.example.make_a_thon.BR
