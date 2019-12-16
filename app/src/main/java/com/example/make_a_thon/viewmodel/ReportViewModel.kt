@@ -26,7 +26,7 @@ class ReportViewModel(application: Application) : BaseViewModel<Any>(application
     private val image = MutableLiveData<MultipartBody.Part>()
 
     fun addReport() {
-        addDisposable(reportClient.)
+//        addDisposable(reportClient.addReport())
     }
 
     fun onClickReport() {

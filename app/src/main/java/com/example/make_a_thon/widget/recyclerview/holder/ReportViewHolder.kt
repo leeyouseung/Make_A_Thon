@@ -2,7 +2,7 @@ package com.example.make_a_thon.widget.recyclerview.holder
 
 import com.example.make_a_thon.base.BaseViewHolder
 import com.example.make_a_thon.databinding.ItemReportListBinding
-import com.example.make_a_thon.model.report.ReportList
+import com.example.make_a_thon.model.report.Report
 import com.example.make_a_thon.widget.recyclerview.navigator.ReportAdapterNavigator
 import com.example.make_a_thon.widget.recyclerview.navigator.ReportItemNavigator
 import com.example.make_a_thon.widget.recyclerview.viewmodel.ReportItemViewModel
@@ -11,15 +11,15 @@ class ReportViewHolder(val binding: ItemReportListBinding) : BaseViewHolder<Repo
 
     private val viewModel = ReportItemViewModel()
 
-    private lateinit var reportList: ReportList
+    private lateinit var report: Report
 
 //    override fun clickItemEvent() {
 //        getNavigator().intentItem()
 //    }
 
-    fun bind(data: ReportList) {
+    fun bind(data: Report) {
         viewModel.bind(data)
-        reportList = data
+        report = data
         viewModel.setNavigator(this)
         binding.viewmodel = viewModel
     }

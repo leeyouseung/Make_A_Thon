@@ -1,14 +1,12 @@
 package com.example.make_a_thon.widget.recyclerview.viewmodel
 
-import android.widget.ImageView
 import androidx.lifecycle.MutableLiveData
-import com.example.make_a_thon.R
 
 import com.example.make_a_thon.base.viewmodel.BaseItemViewModel
-import com.example.make_a_thon.model.report.ReportList
+import com.example.make_a_thon.model.report.Report
 import com.example.make_a_thon.widget.recyclerview.navigator.ReportItemNavigator
 
-class ReportItemViewModel : BaseItemViewModel<ReportList, ReportItemNavigator>() {
+class ReportItemViewModel : BaseItemViewModel<Report, ReportItemNavigator>() {
 
     val time = MutableLiveData<String>()
     val content = MutableLiveData<String>()
@@ -16,7 +14,7 @@ class ReportItemViewModel : BaseItemViewModel<ReportList, ReportItemNavigator>()
 //    val imageView: ImageView()
     var status : String = ""
 
-    override fun bind(data: ReportList) {
+    override fun bind(data: Report) {
 
         if(data.rescueState == 0) {
 
