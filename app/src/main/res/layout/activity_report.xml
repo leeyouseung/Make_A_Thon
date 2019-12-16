@@ -40,6 +40,7 @@
                 android:adjustViewBounds="true"
                 android:layout_marginTop="18dp"
                 android:src="@drawable/none_image"
+                android:onClick="@{() -> viewModel.onClickInputImageBtn()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/app_bar" />
@@ -108,7 +109,7 @@
                 android:text="신고하기"
                 android:textColor="@color/white"
                 android:textSize="7pt"
-                android:onClick="@{() -> viewModel.onClickReport()}"
+                android:onClick="@{() -> viewModel.onClickAddReportBtn()()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/loginLayoutCardView"
                 app:layout_constraintStart_toStartOf="@+id/loginLayoutCardView"

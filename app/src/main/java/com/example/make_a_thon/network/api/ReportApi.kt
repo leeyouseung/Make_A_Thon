@@ -14,12 +14,12 @@ interface ReportApi {
     @Multipart
     @POST("/api/report")
     fun addReport(@Header("token") token: String?,
-               @Part("content") content: RequestBody?,
-               @Part image: MultipartBody.Part?): Single<retrofit2.Response<Response<Report>>>
+                  @Part("content") content: RequestBody?,
+                  @Part image: MultipartBody.Part?): Single<retrofit2.Response<Response<Any>>>
 
     @GET("/api/report/data")
     fun getReportList(@Header("token") token: String): Single<retrofit2.Response<Response<List<Report>>>>
 
-//    @GET("/api/reportInfo/{id}")
-//    fun getReport(@Header("token") token: String, @Path("id") id: Int): Single<retrofit2.Response<Response<ReportList>>>
+    @GET("/api/reportInfo/{id}")
+    fun getReport(@Header("token") token: String, @Path("id") id: Int): Single<retrofit2.Response<Response<Report>>>
 }

@@ -21,6 +21,6 @@ class ReportViewHolder(val binding: ItemReportListBinding) : BaseViewHolder<Repo
         viewModel.bind(data)
         report = data
         viewModel.setNavigator(this)
-        binding.viewmodel = viewModel
+        binding.viewModel = viewModel
     }
 }
